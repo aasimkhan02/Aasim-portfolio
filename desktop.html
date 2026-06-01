@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mohd Aasim | Portfolio</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-variant": "#e2e2e2",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#d43f00",
+            "surface-tint": "#ae3200",
+            "surface": "#f9f9f9",
+            "on-surface-variant": "#5c4037",
+            "surface-container-high": "#e8e8e8",
+            "on-error-container": "#93000a",
+            "on-background": "#1a1c1c",
+            "secondary": "#5e5e5e",
+            "on-secondary-fixed-variant": "#474747",
+            "outline-variant": "#e6beb2",
+            "secondary-container": "#e2e2e2",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#1a1c1c",
+            "surface-container": "#eeeeee",
+            "primary-fixed": "#ffdbd0",
+            "tertiary-container": "#747474",
+            "background": "#f9f9f9",
+            "on-secondary-fixed": "#1b1b1b",
+            "secondary-fixed": "#e2e2e2",
+            "tertiary-fixed": "#e2e2e2",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-bright": "#f9f9f9",
+            "on-secondary-container": "#646464",
+            "inverse-surface": "#2f3131",
+            "on-primary-fixed": "#3a0b00",
+            "tertiary-fixed-dim": "#c6c6c6",
+            "tertiary": "#5c5c5c",
+            "primary-fixed-dim": "#ffb59e",
+            "outline": "#916f65",
+            "primary": "#aa3000",
+            "secondary-fixed-dim": "#c6c6c6",
+            "on-tertiary-container": "#fcfcfc",
+            "on-tertiary-fixed-variant": "#474747",
+            "inverse-on-surface": "#f0f1f1",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#852400",
+            "surface-container-highest": "#e2e2e2",
+            "on-tertiary-fixed": "#1b1b1b",
+            "inverse-primary": "#ffb59e",
+            "surface-dim": "#dadada",
+            "on-primary-container": "#fffbff",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f3f3f4",
+            "brand-orange": "#FF4D00"
+          },
+          fontFamily: {
+            "sans": ["Space Grotesk", "sans-serif"],
+            "display": ["Space Grotesk", "sans-serif"],
+          },
+          animation: {
+            'marquee': 'marquee 30s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* High-end minimalist scroll behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+    /* Refined About Circle */
+    .about-circle {
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .about-circle:hover {
+      background-color: #1a1c1c;
+      color: #ffffff;
+      transform: scale(1.02);
+      border-color: #1a1c1c;
+    }
+    /* Smooth marquee pause */
+    .marquee-container:hover .animate-marquee {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-white text-on-surface antialiased font-sans">
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm px-8 py-8 md:px-16" data-purpose="main-navigation">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 bg-brand-orange rounded-full"></div>
+<a class="text-xl font-bold tracking-tight" href="#">Aasim</a>
+</div>
+<!-- Center Links -->
+<ul class="hidden md:flex items-center gap-12 text-[11px] font-bold tracking-[0.25em] uppercase text-secondary">
+<li><a class="hover:text-on-surface transition-colors" href="#about">About</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#projects">Projects</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#contact">Contact</a></li>
+</ul>
+<!-- Resume Link -->
+<div class="flex items-center">
+<a class="group flex items-center gap-2 text-brand-orange text-sm font-bold uppercase tracking-wider" href="#">
+<span>Resume</span>
+<svg class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 17L17 7"></path>
+<path d="M7 7h10v10"></path>
+</svg>
+</a>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<main class="relative min-h-screen flex flex-col justify-between pt-48" data-purpose="hero-container">
+<!-- Top/Middle Grid Section -->
+<section class="max-w-[1440px] mx-auto w-full px-8 md:px-16 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center flex-grow mb-24">
+<!-- About Me Circle Button -->
+<div class="md:col-span-5 lg:col-span-4 flex justify-start md:justify-center">
+<a class="about-circle w-44 h-44 md:w-52 md:h-52 rounded-full border border-on-surface/20 flex items-center justify-center text-sm font-medium tracking-widest uppercase cursor-pointer no-underline" href="#about">
+          About me
+        </a>
+</div>
+<!-- Professional Title -->
+<div class="md:col-span-7 lg:col-span-8 md:text-right">
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-[-0.03em] text-on-surface max-w-2xl ml-auto">
+          Developer,<br/>
+          Designer &amp; Engineer
+        </h1>
+<p class="mt-8 text-secondary font-medium tracking-wide uppercase text-xs md:text-sm">Based in New Delhi, India</p>
+</div>
+</section>
+<!-- Massive Marquee Section -->
+<section class="w-full pb-12 overflow-hidden marquee-container" data-purpose="hero-marquee">
+<div class="relative flex whitespace-nowrap">
+<div class="animate-marquee flex items-center">
+<!-- Text Set 1 -->
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">
+            Mohd Aasim <span class="text-brand-orange">—</span>
+</span>
+<!-- Text Set 2 -->
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">
+            Mohd Aasim <span class="text-brand-orange">—</span>
+</span>
+<!-- Text Set 3 (Loop buffer) -->
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">
+            Mohd Aasim <span class="text-brand-orange">—</span>
+</span>
+<!-- Text Set 4 (Loop buffer) -->
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">
+            Mohd Aasim <span class="text-brand-orange">—</span>
+</span>
+</div>
+</div>
+</section>
+</main>
+<!-- END: Hero Section -->
+<!-- BEGIN: Social Sidebar (Minimal) -->
+<div class="fixed bottom-12 left-8 md:left-12 hidden lg:block z-40" data-purpose="social-sidebar">
+<div class="flex flex-col gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-secondary">
+<a class="hover:text-on-surface transition-colors rotate-180 [writing-mode:vertical-lr]" href="#">Instagram</a>
+<a class="hover:text-on-surface transition-colors rotate-180 [writing-mode:vertical-lr]" href="#">LinkedIn</a>
+<a class="hover:text-on-surface transition-colors rotate-180 [writing-mode:vertical-lr]" href="#">GitHub</a>
+</div>
+</div>
+<!-- END: Social Sidebar -->
+<script data-purpose="ui-interactivity">
+    // Marquee logic is handled by CSS animation for performance
+    // Adding subtle interaction feedback
+    document.addEventListener('DOMContentLoaded', () => {
+      const circle = document.querySelector('.about-circle');
+      if(circle) {
+        circle.addEventListener('mousemove', (e) => {
+          const rect = circle.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          circle.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
+        });
+        circle.addEventListener('mouseleave', () => {
+          circle.style.transform = `translate(0, 0) scale(1)`;
+        });
+      }
+    });
+  </script>
+</body></html>

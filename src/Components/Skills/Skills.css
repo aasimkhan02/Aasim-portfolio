@@ -1,0 +1,57 @@
+/* Skills Section */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.skill-item {
+  cursor: default;
+}
+
+.skill-headline {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.skill-underline {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.skill-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--on-surface);
+  transition: background-color 0.3s ease;
+}
+
+.skill-item:hover .skill-headline {
+  color: var(--brand-orange);
+}
+
+.skill-item:hover .skill-underline::after {
+  background-color: var(--brand-orange);
+}
+
+.body-lg {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 42rem;
+}
+
+@media (min-width: 768px) {
+  .skill-headline { font-size: 4.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .skill-headline { font-size: 5rem; }
+}

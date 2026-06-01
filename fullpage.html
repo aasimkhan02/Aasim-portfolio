@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mohd Aasim | Portfolio</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#c6c6c6",
+            "tertiary": "#5c5c5c",
+            "tertiary-fixed": "#e2e2e2",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#e2e2e2",
+            "on-tertiary-fixed": "#1b1b1b",
+            "primary-fixed-dim": "#ffb59e",
+            "on-surface-variant": "#5c4037",
+            "surface-container-low": "#f3f3f4",
+            "surface-container-high": "#e8e8e8",
+            "on-tertiary-container": "#fcfcfc",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#e2e2e2",
+            "outline": "#916f65",
+            "on-primary-fixed-variant": "#852400",
+            "surface-variant": "#e2e2e2",
+            "primary-fixed": "#ffdbd0",
+            "on-background": "#1a1c1c",
+            "inverse-on-surface": "#f0f1f1",
+            "surface-container-lowest": "#ffffff",
+            "inverse-surface": "#2f3131",
+            "surface-tint": "#ae3200",
+            "surface-dim": "#dadada",
+            "on-secondary-fixed-variant": "#474747",
+            "tertiary-container": "#747474",
+            "background": "#f9f9f9",
+            "surface-bright": "#f9f9f9",
+            "on-error": "#ffffff",
+            "surface": "#f9f9f9",
+            "outline-variant": "#e6beb2",
+            "on-tertiary": "#ffffff",
+            "inverse-primary": "#ffb59e",
+            "on-secondary-container": "#646464",
+            "on-primary-fixed": "#3a0b00",
+            "on-primary": "#ffffff",
+            "surface-container": "#eeeeee",
+            "secondary": "#5e5e5e",
+            "primary": "#aa3000",
+            "on-surface": "#1a1c1c",
+            "error": "#ba1a1a",
+            "primary-container": "#d43f00",
+            "secondary-container": "#e2e2e2",
+            "on-secondary-fixed": "#1b1b1b",
+            "on-tertiary-fixed-variant": "#474747",
+            "on-primary-container": "#fffbff",
+            "secondary-fixed-dim": "#c6c6c6",
+            "error-container": "#ffdad6",
+            "brand-orange": "#aa3000"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "base": "8px",
+            "stack-lg": "64px",
+            "gutter": "24px",
+            "stack-sm": "16px",
+            "section-gap": "160px",
+            "stack-md": "32px",
+            "grid-margin": "64px"
+          },
+          "fontFamily": {
+            "sans": ["Space Grotesk", "sans-serif"],
+            "headline-xl": ["Space Grotesk"],
+            "label-xl": ["Space Grotesk"],
+            "body-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"],
+            "headline-md": ["Space Grotesk"],
+            "body-md": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "headline-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "label-xl": ["14px", {"lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "body-lg": ["20px", {"lineHeight": "160%", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "headline-md": ["48px", {"lineHeight": "110%", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "150%", "letterSpacing": "0em", "fontWeight": "400"}],
+            "headline-lg": ["72px", {"lineHeight": "100%", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          },
+          animation: {
+            'marquee': 'marquee 30s linear infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; background-color: #f9f9f9; }
+    .about-circle { transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+    .about-circle:hover { background-color: #1a1c1c; color: #ffffff; transform: scale(1.02); border-color: #1a1c1c; }
+    .marquee-container:hover .animate-marquee { animation-play-state: paused; }
+    .skill-underline { position: relative; }
+    .skill-underline::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 100%; height: 2px; background-color: #1a1c1c; }
+    .project-card:hover .project-image { transform: scale(1.05); }
+    .project-image { transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-sans">
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-sm px-8 py-8 md:px-16" data-purpose="main-navigation">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 bg-brand-orange rounded-full"></div>
+<a class="text-xl font-bold tracking-tight" href="#">Aasim</a>
+</div>
+<ul class="hidden md:flex items-center gap-12 text-[11px] font-bold tracking-[0.25em] uppercase text-secondary">
+<li><a class="hover:text-on-surface transition-colors" href="#about">About</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#skills">Skills</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#projects">Projects</a></li>
+</ul>
+<div class="flex items-center">
+<a class="group flex items-center gap-2 text-brand-orange text-sm font-bold uppercase tracking-wider" href="#">
+<span>Resume</span>
+<svg class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 17L17 7"></path>
+<path d="M7 7h10v10"></path>
+</svg>
+</a>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section (SCREEN_10) -->
+<main class="relative min-h-screen flex flex-col justify-between pt-48" data-purpose="hero-container">
+<section class="max-w-[1440px] mx-auto w-full px-8 md:px-16 lg:px-24 grid grid-cols-1 md:grid-cols-12 gap-12 items-center flex-grow mb-24">
+<div class="md:col-span-5 lg:col-span-4 flex justify-start md:justify-center">
+<a class="about-circle w-44 h-44 md:w-52 md:h-52 rounded-full border border-on-surface/20 flex items-center justify-center text-sm font-medium tracking-widest uppercase cursor-pointer no-underline" href="#about">
+        About me
+      </a>
+</div>
+<div class="md:col-span-7 lg:col-span-8 md:text-right">
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-[-0.03em] text-on-surface max-w-2xl ml-auto">
+        Developer,<br/>
+        Designer &amp; Engineer
+      </h1>
+<p class="mt-8 text-secondary font-medium tracking-wide uppercase text-xs md:text-sm">Based in New Delhi, India</p>
+</div>
+</section>
+<section class="w-full pb-12 overflow-hidden marquee-container" data-purpose="hero-marquee">
+<div class="relative flex whitespace-nowrap">
+<div class="animate-marquee flex items-center">
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">Mohd Aasim <span class="text-brand-orange">—</span></span>
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">Mohd Aasim <span class="text-brand-orange">—</span></span>
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">Mohd Aasim <span class="text-brand-orange">—</span></span>
+<span class="text-[18vw] md:text-[22vw] font-bold uppercase leading-none tracking-tighter px-8 select-none">Mohd Aasim <span class="text-brand-orange">—</span></span>
+</div>
+</div>
+</section>
+</main>
+<!-- END: Hero Section -->
+<!-- BEGIN: About Section (Inspired by IMAGE_4) -->
+<section class="py-32 px-8 md:px-16 lg:px-24 bg-surface-container-low" data-purpose="about-section" id="about">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<div class="lg:col-span-5 relative group">
+<div class="aspect-[4/5] overflow-hidden bg-surface-dim grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Mohd Aasim Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk5uGZn6ih_VVHINsJrhCm1-CoYkTHGWXZYaf-WCq8TcB7dMuxqwz0eMDYcurbxXmlxyBapFpr_sr8ZvnuG_d_3nxxr7P3MyFJU3SVoTYC4A4PFXNXubqHUrldEAJcJ-jevYW_dMAKZjSwEvocO0vHAQkMqE8pT0mPeogcmgWoA8GucOAZoBIG7-jcaN_Qq3ZwoP2OAr6hBLYF-NwVpgxMr6BebOaXx-W90BU3Nt-N6JBGUN828isMV1uimQ-lb-xwuIHRusgdNhY"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-brand-orange rounded-full -z-10 opacity-10 group-hover:scale-110 transition-transform duration-700"></div>
+</div>
+<div class="lg:col-span-7 pt-12">
+<p class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-6">About Me</p>
+<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-on-surface mb-12">
+        Crafting digital experiences through engineering and minimalist design.
+      </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<p class="text-secondary body-md leading-relaxed">
+            I am a multi-disciplinary developer focused on building functional, high-performance interfaces that bridge the gap between design and code. My approach is rooted in simplicity, accessibility, and precision.
+          </p>
+</div>
+<div>
+<p class="text-secondary body-md leading-relaxed">
+            With over 5 years of experience in the industry, I help brands and startups translate their vision into meaningful digital products that leave a lasting impression.
+          </p>
+</div>
+</div>
+<div class="mt-16 flex flex-wrap gap-x-12 gap-y-6">
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-secondary mb-2">Location</p>
+<p class="text-sm font-semibold">New Delhi, India</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-secondary mb-2">Focus</p>
+<p class="text-sm font-semibold">Product Engineering</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-secondary mb-2">Experience</p>
+<p class="text-sm font-semibold">5+ Years</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: About Section -->
+<!-- BEGIN: Skills Section (IMAGE_3 Style) -->
+<section class="py-32 px-8 md:px-16 lg:px-24 bg-white" data-purpose="skills-section" id="skills">
+<div class="max-w-[1440px] mx-auto">
+<p class="text-on-surface font-bold uppercase tracking-widest text-sm mb-20">What I Do</p>
+<div class="flex flex-col gap-16 md:gap-24">
+<div class="group cursor-default">
+<h3 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter skill-underline inline-block pb-4 group-hover:text-brand-orange transition-colors duration-300">
+          UI / UX Design
+        </h3>
+<p class="mt-8 max-w-2xl text-secondary body-lg">
+          Creating intuitive user journeys and high-fidelity visuals that align with business goals and user needs.
+        </p>
+</div>
+<div class="group cursor-default">
+<h3 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter skill-underline inline-block pb-4 group-hover:text-brand-orange transition-colors duration-300">
+          Frontend Dev
+        </h3>
+<p class="mt-8 max-w-2xl text-secondary body-lg">
+          Specializing in React, Tailwind CSS, and Framer Motion to build performant, interactive web applications.
+        </p>
+</div>
+<div class="group cursor-default">
+<h3 class="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter skill-underline inline-block pb-4 group-hover:text-brand-orange transition-colors duration-300">
+          Technical SEO
+        </h3>
+<p class="mt-8 max-w-2xl text-secondary body-lg">
+          Optimizing site structure and performance to ensure maximum visibility and lightning-fast load times.
+        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Skills Section -->
+<!-- BEGIN: Projects Section -->
+<section class="py-32 px-8 md:px-16 lg:px-24 bg-surface-container-lowest" data-purpose="projects-section" id="projects">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+<div>
+<p class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-6">Selected Work</p>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight">Featured Projects</h2>
+</div>
+<a class="text-sm font-bold uppercase tracking-[0.2em] hover:text-brand-orange transition-colors border-b border-on-surface/10 pb-2" href="#">View All Works</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+<!-- Project 1 -->
+<div class="project-card group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden bg-surface-dim mb-8">
+<img alt="Lumina Project" class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnlUug-QJzsQ9DSQ9dOrCvD2rdjX4n4NGGRKu2MA1tPK3DSfVoFx4NKcy1gGGH2G76sBfP9a3WuzZEjXKvCx6sRTGfLHfMRbDlwnPirtR5poOgRZIP3nDGhsDNvgiv22dPglHjJ7fSsqVPii3piMiHWwkHwhu9B0kkuU4qwNjbcIRcmXW0_DA6HzzF4Cq3tssbmjWSRm4U8wpvuIHo19JolH09FvDTBnY_MczWF9vqump_Eq3GAMQWapGmZsF7lzbFW6oTltsACx0"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Lumina Dashboard</h3>
+<p class="text-secondary text-sm font-medium tracking-wide uppercase">UI Design / Web App / 2023</p>
+</div>
+<svg class="w-6 h-6 transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card group cursor-pointer md:mt-24">
+<div class="aspect-[16/10] overflow-hidden bg-surface-dim mb-8">
+<img alt="Zenith Commerce" class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCruAHqMJFpEYSV6tv9NNQXxjW0odhgm6HQ826F6gn3BQFvRHnSOdkLU5TtrjTK90_epTuiAeHkHZOKKe4XXSMFoBR3Lni6prZXyAx9Lk710wSEo5SAI0QhCueJ8OSYPZYILYi7HgLk9F1MXrPm5ygU74Bs1P9YkyRDerOSnKTdBcch7zIpxv3z60a4lW2n4_7e_72VLNXsEh5B16viLUg5-miI_tFHsqzxvumP-gcOr0CinfrALIezIqpYMmmFKRjGADBBQoU7BQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Zenith Commerce</h3>
+<p class="text-secondary text-sm font-medium tracking-wide uppercase">Frontend / E-Commerce / 2024</p>
+</div>
+<svg class="w-6 h-6 transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="project-card group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden bg-surface-dim mb-8">
+<img alt="Kinetik Identity" class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdwjmXFG-7np-RL3HtpOpJqzm6QCbMOFt3X-p3dM-IAVaDVURWBPkhYrRTZLatX52AX0HdpCjbqlBYauXyzUNxeiccCYE8mQ6dn_GYNbbXCkJU-sywfdAxsXoAWVgXF7pudx5ch53CFBw6VxEzaadsFblKB7R8GhN-W4ec7SfFq35vbKpdEikuLeqhazbJKdPjInQet7aWX9Bpl-NmtlD9lI53xHoZ6P44jZ8dZzH8uMXBICuxS5bii8B8LSpq1pBUH2wFDd7sITQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Kinetik Identity</h3>
+<p class="text-secondary text-sm font-medium tracking-wide uppercase">Branding / Creative / 2023</p>
+</div>
+<svg class="w-6 h-6 transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="project-card group cursor-pointer md:mt-24">
+<div class="aspect-[16/10] overflow-hidden bg-surface-dim mb-8">
+<img alt="Aether Studio" class="project-image w-full h-full object-cover grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgIZ3RCZtyVgOjN9v3_USoeIObejKKw8AgfeYEt4Niw9rQybOc2t9WN-g_SazPE01rAJx6-at8214NMkphOKGlUCBa9_jqOTf-6ak5mpEBCMv4tQ0X0gd5LC0swCuTrSdtoHgRwtS2XvMrkK_YOIzRzc8vkyiflGa4NhvBxiAe9jVGdv3tOG_FnomjhxevEbMrO4BGwwU-JQCHyx85XSLOWIulXFeUpR9fCDhNn_4HNrZlI8gGZWlPF3y8YeiJ9ZAx71fst_gjGwQ"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Aether Studio</h3>
+<p class="text-secondary text-sm font-medium tracking-wide uppercase">Web Development / Portfolio / 2024</p>
+</div>
+<svg class="w-6 h-6 transform -rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M7 17L17 7M7 7h10v10" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Projects Section -->
+<!-- BEGIN: Footer / Contact -->
+<footer class="py-24 px-8 md:px-16 lg:px-24 bg-on-surface text-white" id="contact">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-24">
+<div>
+<h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-12">Let's build<br/>something great.</h2>
+<a class="text-2xl md:text-3xl font-light hover:text-brand-orange transition-colors border-b border-white/20 pb-2" href="mailto:aasim@example.com">aasim@example.com</a>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="flex flex-col gap-4">
+<p class="text-[10px] uppercase tracking-widest font-bold text-white/40">Socials</p>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#">Instagram</a>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#">LinkedIn</a>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#">GitHub</a>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#">Twitter</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="text-[10px] uppercase tracking-widest font-bold text-white/40">Navigation</p>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#about">About</a>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#projects">Projects</a>
+<a class="text-sm font-medium hover:text-brand-orange transition-colors" href="#">Resume</a>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<div class="w-2.5 h-2.5 bg-brand-orange rounded-full"></div>
+<p class="text-xs font-bold tracking-widest uppercase">© 2024 Mohd Aasim</p>
+</div>
+<p class="text-[10px] uppercase tracking-widest text-white/40">Inspired by Minimalism — Built with precision</p>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: Social Sidebar (Minimal) -->
+<div class="fixed bottom-12 left-8 md:left-12 hidden xl:block z-40" data-purpose="social-sidebar">
+<div class="flex flex-col gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-secondary">
+<a class="hover:text-on-surface transition-colors rotate-180 [writing-mode:vertical-lr]" href="#">Instagram</a>
+<a class="hover:text-on-surface transition-colors rotate-180 [writing-mode:vertical-lr]" href="#">LinkedIn</a>
+<a class="hover:text-on-surface transition-colors rotate-180 [writing-mode:vertical-lr]" href="#">GitHub</a>
+</div>
+</div>
+<!-- END: Social Sidebar -->
+<script data-purpose="ui-interactivity">
+  document.addEventListener('DOMContentLoaded', () => {
+    const circle = document.querySelector('.about-circle');
+    if(circle) {
+      circle.addEventListener('mousemove', (e) => {
+        const rect = circle.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        circle.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
+      });
+      circle.addEventListener('mouseleave', () => {
+        circle.style.transform = `translate(0, 0) scale(1)`;
+      });
+    }
+  });
+</script>
+</body></html>

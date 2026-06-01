@@ -1,0 +1,33 @@
+/* Social Sidebar */
+.social-sidebar {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  left: 2rem;
+  z-index: 40;
+}
+
+.social-sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.social-sidebar-links a {
+  transition: color 0.2s;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.social-sidebar-links a:hover {
+  color: var(--on-surface);
+}
+
+@media (min-width: 1024px) {
+  .social-sidebar { display: block; }
+}
