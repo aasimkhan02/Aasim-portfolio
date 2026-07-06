@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import ProfilePicture from "./../../assets/profile.png"
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
             <img 
               alt="Mohd Aasim Portrait" 
               className="about-image" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk5uGZn6ih_VVHINsJrhCm1-CoYkTHGWXZYaf-WCq8TcB7dMuxqwz0eMDYcurbxXmlxyBapFpr_sr8ZvnuG_d_3nxxr7P3MyFJU3SVoTYC4A4PFXNXubqHUrldEAJcJ-jevYW_dMAKZjSwEvocO0vHAQkMqE8pT0mPeogcmgWoA8GucOAZoBIG7-jcaN_Qq3ZwoP2OAr6hBLYF-NwVpgxMr6BebOaXx-W90BU3Nt-N6JBGUN828isMV1uimQ-lb-xwuIHRusgdNhY"
+              src={ProfilePicture}
             />
           </div>
           <div className="about-blob"></div>
@@ -19,18 +20,18 @@ const About = () => {
         <div className="about-content">
           <p className="section-label mb-6">About Me</p>
           <h2 className="about-headline">
-            Crafting digital experiences through engineering and minimalist design.
+            Building software through curiosity, consistency, and continuous learning.
           </h2>
           
           <div className="about-text-grid">
             <div>
               <p className="text-secondary body-md">
-                I am a multi-disciplinary developer focused on building functional, high-performance interfaces that bridge the gap between design and code. My approach is rooted in simplicity, accessibility, and precision.
+                I'm a software developer who enjoys learning by building. I like understanding how things work beneath the surface, experimenting with new technologies, and turning ideas into projects that help me grow as an engineer. Every project is an opportunity to learn something I didn't know before.
               </p>
             </div>
             <div>
               <p className="text-secondary body-md">
-                With over 5 years of experience in the industry, I help brands and startups translate their vision into meaningful digital products that leave a lasting impression.
+               This portfolio reflects that journey. It brings together the projects I've built, the technologies I've explored, and the progress I've made as I work toward becoming a better software engineer.
               </p>
             </div>
           </div>
@@ -38,15 +39,15 @@ const About = () => {
           <div className="flex flex-wrap mt-16 gap-12">
             <div>
               <p className="meta-label mb-2">Location</p>
-              <p className="meta-value">New Delhi, India</p>
+              <p className="meta-value">Mumbai, India</p>
             </div>
             <div>
               <p className="meta-label mb-2">Focus</p>
-              <p className="meta-value">Product Engineering</p>
+              <p className="meta-value">Backend Engineering</p>
             </div>
             <div>
-              <p className="meta-label mb-2">Experience</p>
-              <p className="meta-value">5+ Years</p>
+              <p className="meta-label mb-2">Career stage</p>
+              <p className="meta-value">Entry level</p>
             </div>
           </div>
         </div>
