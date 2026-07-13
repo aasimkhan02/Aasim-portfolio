@@ -19,13 +19,13 @@
 }
 
 .social-sidebar-links a {
-  transition: color 0.2s;
+  transition: color 0.4s;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
 }
 
 .social-sidebar-links a:hover {
-  color: var(--on-surface);
+   color: var(--brand-orange);
 }
 
 @media (min-width: 1024px) {

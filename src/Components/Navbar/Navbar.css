@@ -129,7 +129,7 @@
 }
 
 @media (min-width: 768px) {
-  .navbar { padding: 2rem 4rem; }
+  .navbar { padding: 1.2rem 4rem; }
   .desktop-nav-links { display: flex; }
   .menu-toggle { display: none; }
   .resume-btn { font-size: 0.875rem; }

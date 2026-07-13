@@ -72,15 +72,15 @@
 }
 
 .meta-label {
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-weight: 700;
-  color: var(--secondary);
+  color: var(--brand-orange);
 }
 
 .meta-value {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 

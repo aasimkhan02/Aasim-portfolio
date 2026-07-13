@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Projects.css';
 import HealthWaveImg from '../../assets/healthwave.png';
 import Phytoclass from './../../assets/ocean.jpg'
@@ -6,7 +7,7 @@ import ConstructionImg from '../../assets/construction.jpg';
 
 const Projects = () => {
   return (
-    <section className="section-padding bg-white" id="projects">
+    <section className="section-padding bg-white" id="projects" style={{ paddingBottom: '2rem' }}>
       <div className="container">
         <h2 className="projects-section-title mb-24 uppercase">Selected Work</h2>
 
@@ -86,6 +87,12 @@ const Projects = () => {
             </div>
           </article>
 
+        </div>
+
+        <div className="more-projects-wrapper">
+          <Link to="/works" className="more-projects-btn">
+            Checkout More Projects <span className="arrow">→</span>
+          </Link>
         </div>
       </div>
     </section>
