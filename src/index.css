@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  line-height: 1.5;
+  line-height: 1.1;
   -webkit-font-smoothing: antialiased;
   font-family: "Space Grotesk", sans-serif;
   background-color: var(--bg-color);
