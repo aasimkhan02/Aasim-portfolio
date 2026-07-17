@@ -1,11 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
-import { projectsData } from '../../data/projectsData';
+import PhytoclassImg from '../../assets/ocean.jpg';
+import ConstructionImg from '../../assets/construction.jpg';
+
+const featuredProjects = [
+  {
+    id: 'phytoclass',
+    title: 'Phytoclass',
+    subtitle: 'Google Summer of Code 2025',
+    description: 'PhytoClass is an open-source platform for phytoplankton classification and flow cytometry analysis, designed to help researchers process, validate, and interpret scientific data through an interactive R/Shiny interface. As part of Google Summer of Code, I contributed by improving the analysis workflow, implementing session-based file isolation, adding report export capabilities, strengthening validation checks, and integrating automated testing to enhance reliability and multi-user support.',
+    categories: ['R', 'Shiny', 'GitHub Actions', 'testthat'],
+    coverImage: PhytoclassImg,
+  },
+  {
+    id: 'evua',
+    title: 'EVUA',
+    subtitle: 'ACADEMIC PROJECT',
+    description: 'EVUA is a legacy code modernization platform that automates large-scale code migrations using AST-based transformations with LLM-assisted fallbacks. It analyzes existing codebases, applies repository-wide refactoring, validates the generated changes, and streamlines the migration process through an intuitive web interface, making legacy software upgrades more reliable and maintainable.',
+    categories: ['Python', 'FastAPI', 'React', 'SQLite'],
+    coverImage: ConstructionImg,
+  }
+];
 
 const Projects = () => {
-  const featuredProjects = projectsData.slice(0, 2);
-
   return (
     <section className="section-padding bg-white" id="projects" style={{ paddingBottom: '2rem' }}>
       <div className="container">
@@ -25,7 +43,7 @@ const Projects = () => {
               <div className="project-details-grid">
                 <div className="project-header-info">
                   <h3 className="project-card-title">{project.title}</h3>
-                  <p className="project-subtitle">Academic project / GSoC 2025</p>
+                  <p className="project-subtitle">{project.subtitle}</p>
                 </div>
 
                 <div className="project-description-info">

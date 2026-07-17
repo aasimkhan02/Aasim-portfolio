@@ -44,12 +44,12 @@ const Contact = () => {
               </div>
 
               <div className="form-group">
-                <label className="form-label-title" htmlFor="email">Email (required)</label>
+                <label className="form-label-title" htmlFor="email">Email</label>
                 <input className="minimal-input" id="email" name="email" required type="email" />
               </div>
 
               <div className="form-group">
-                <label className="form-label-title" htmlFor="message">Message (required)</label>
+                <label className="form-label-title" htmlFor="message">Message</label>
                 <textarea className="minimal-input resize-none" id="message" name="message" required rows="1"></textarea>
               </div>
 

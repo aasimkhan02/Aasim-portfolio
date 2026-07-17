@@ -6,6 +6,7 @@ export const projectsData = [
   {
     id: 'phytoclass',
     title: 'PHYTOCLASS - Open source phytoplankton platform.',
+    tagline: 'An open-source platform built to simplify phytoplankton classification and analysis.',
     techStack: 'R, Shiny, GitHub Actions, testthat',
     categories: ['R', 'Shiny', 'GitHub Actions', 'testthat'],
     summary: 'Open-source phytoplankton classification platform',

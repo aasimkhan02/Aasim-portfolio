@@ -41,10 +41,9 @@
 }
 
 .about-circle:hover {
-  background-color: var(--on-surface);
-  color: var(--bg-color);
+  background-color: var(--brand-orange);
+  color: white;
   transform: scale(1.02);
-  border-color: var(--on-surface);
 }
 
 .hero-text {

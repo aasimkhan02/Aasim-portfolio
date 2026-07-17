@@ -41,7 +41,7 @@
 }
 
 .desktop-nav-links a:hover {
-  color: var(--on-surface);
+  color: var(--brand-orange);
 }
 
 .resume-btn {

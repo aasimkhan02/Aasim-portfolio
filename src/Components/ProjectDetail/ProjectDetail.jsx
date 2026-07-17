@@ -11,15 +11,37 @@ const AutoSlider = ({ images }) => {
     if (!images || images.length <= 1) return;
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % images.length);
-    }, 3000); // 3 seconds
+    }, 4000); // 4 seconds
     return () => clearInterval(interval);
   }, [images]);
 
   if (!images || images.length === 0) return null;
 
   return (
-    <div className="gallery-slider">
-      <img src={images[currentSlide]} alt={`Gallery slide ${currentSlide}`} className="gallery-image fade-transition" />
+    <div className="carousel-container">
+      <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 87}%)` }}>
+        {images.map((img, idx) => (
+          <div
+            key={idx}
+            className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
+            style={{ left: `${idx * 87 + 7.5}%` }}
+          >
+            <img src={img} alt={`Gallery slide ${idx}`} />
+          </div>
+        ))}
+      </div>
+      {images.length > 1 && (
+        <div className="carousel-dots">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              className={`carousel-dot ${idx === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -52,9 +74,10 @@ const ProjectDetail = () => {
 
   const sections = [
     { key: 'about', title: 'About the Project', data: project.about, splitLayout: true },
+    { key: 'tagline', data: project.tagline, splitLayout: true, hideInMap: true },
     { key: 'techStack', title: 'Tech Stack', data: project.techStack },
     { key: 'contributions', title: 'My Contributions', data: project.contributions },
-    { key: 'imageGallery', title: 'Image Gallery', data: project.imageGallery },
+    { key: 'imageGallery', data: project.imageGallery },
     { key: 'features', title: 'Features', data: project.features },
     { key: 'architecture', title: 'Architecture', data: project.architecture },
     { key: 'workflow', title: 'Workflow', data: project.workflow },
@@ -68,6 +91,7 @@ const ProjectDetail = () => {
     { key: 'links', title: 'GitHub & Live Demo', data: { github: project.githubLink, live: project.liveLink } },
     { key: 'relatedProjects', title: 'Related Projects', data: project.relatedProjects }
   ].filter(section => {
+    if (section.hideInMap) return false;
     if (section.key === 'links') return section.data.github || section.data.live;
     if (Array.isArray(section.data)) return section.data.length > 0;
     return !!section.data;
@@ -95,9 +119,9 @@ const ProjectDetail = () => {
           {section.data.map((item, idx) => (
             <div key={idx} className="contribution-card">
               <div className="contribution-icon">
-                 <div className="icon-box">
-                   {renderIcon(item.icon)}
-                 </div>
+                <div className="icon-box">
+                  {renderIcon(item.icon)}
+                </div>
               </div>
               <div className="contribution-meta">
                 <span className="contribution-step">{item.step}</span> / <span className="contribution-category">{item.category}</span>
@@ -153,7 +177,7 @@ const ProjectDetail = () => {
 
       <section className="detail-project-overview">
         <div className="detail-project-overview-content">
-          {project.overview}
+          {project.tagline}
         </div>
       </section>
 
@@ -161,7 +185,7 @@ const ProjectDetail = () => {
         {sections.map((section) => {
           return (
             <div className={`detail-row ${section.splitLayout ? 'split-layout' : ''}`} key={section.key}>
-              <h2 className="detail-heading">{section.title}</h2>
+              {section.title && <h2 className="detail-heading">{section.title}</h2>}
               <div className="detail-content-wrapper">
                 {renderContent(section)}
               </div>

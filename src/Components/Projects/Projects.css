@@ -39,7 +39,7 @@
 }
 
 .project-card-title {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--on-surface);
   letter-spacing: -0.02em;
@@ -48,7 +48,7 @@
 }
 
 .project-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--secondary);
@@ -67,13 +67,20 @@
 .project-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   color: var(--brand-orange);
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.project-tech-list span{
+  color: white;
+  background-color: var(--brand-orange);
+  padding: 0.8rem 2rem;
+  border-radius: 40px;
 }
 
 .project-view-link {
@@ -114,7 +121,7 @@
   }
   
   .project-card-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
 
