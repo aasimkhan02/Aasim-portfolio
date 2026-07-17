@@ -6,11 +6,34 @@ export const projectsData = [
   {
     id: 'phytoclass',
     title: 'PHYTOCLASS - Open source phytoplankton platform.',
-    overview: 'An open-source platform built to simplify phytoplankton classification and analysis.',
+    techStack: 'R, Shiny, GitHub Actions, testthat',
     categories: ['R', 'Shiny', 'GitHub Actions', 'testthat'],
     summary: 'Open-source phytoplankton classification platform',
     coverImage: PhytoclassImg,
-    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus eu lectus et ultrices. Donec scelerisque pretium velit id bibendum. Nullam id facilisis massa. Aenean aliquam suscipit est, sed sagittis risus pharetra a. Vivamus nec lacus dui. Sed odio orci, tincidunt iaculis dapibus id, elementum at purus. Praesent molestie libero vel purus varius, lobortis tincidunt orci ullamcorper. Ut ut lorem orci. Proin ut lectus a nunc efficitur lobortis non a sem. Proin non neque blandit, porttitor ipsum sit amet, suscipit elit. Maecenas quis quam ex. Vivamus malesuada urna ut turpis venenatis finibus. Nulla tristique eget lectus quis congue. Donec dignissim neque sodales nunc eleifend, eu consectetur lacus viverra. Donec tempor nunc ac metus iaculis facilisis. Aenean sed tempor odio, nec ultricies leo. Ut ut lorem orci. Proin ut lectus a nunc efficitur lobortis non a sem. Proin non neque blandit, porttitor ipsum sit amet, suscipit elit. Maecenas quis quam ex. Vivamus malesuada urna ut turpis venenatis finibus. Nulla tristique eget lectus quis congue. Donec dignissim neque sodales nunc eleifend, eu consectetur lacus viverra. Donec tempor nunc ac metus iaculis facilisis. Aenean sed tempor odio, nec ultricies leo.',
+    contributions: [
+      {
+        step: '01',
+        category: 'ARCHITECTURE',
+        title: 'CORE LOGIC DESIGN',
+        desc: 'Spearheaded the design of the low-latency message broker using a customized Ring Buffer implementation. Reduced processing overhead by 15% through lock-free concurrency patterns.',
+        icon: 'cpu'
+      },
+      {
+        step: '02',
+        category: 'DEPLOYMENT',
+        title: 'SCALING STRATEGY',
+        desc: 'Orchestrated a container-native scaling strategy that allowed the system to expand from 10 to 500 nodes in under 2 minutes, ensuring zero-downtime deployments.',
+        icon: 'network'
+      },
+      {
+        step: '03',
+        category: 'SECURITY',
+        title: 'SECURE PROTOCOLS',
+        desc: 'Integrated end-to-end hardware-level encryption (HSM integration) for sensitive data transit, meeting the strictest industrial compliance standards.',
+        icon: 'shield'
+      }
+    ],
+    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus eu lectus et ultrices. Donec scelerisque pretium velit id bibendum. Nullam id facilisis massa. Aenean aliquam suscipit est, sed sagittis risus pharetra a. Vivamus nec lacus dui. Sed odio orci, tincidunt iaculis dapibus id, elementum at purus. Praesent molestie libero vel purus varius, lobortis tincidunt orci ullamcorper. Ut ut lorem orci. Proin ut lectus a nunc efficitur lobortis non a sem. Proin non neque blandit, porttitor ipsum sit amet, suscipit elit. Maecenas quis quam ex. Vivamus malesuada urna ut turpis venenatis finibus. Nulla tristique eget lectus quis congue. Donec dignissim neque sodales nunc eleifend, eu consectetur lacus viverra. Donec tempor nunc ac metus iaculis facilisis. Aenean sed tempor odio, nec ultricies leo. Ut ut lorem orci. Proin ut lectus a nunc efficitur lobortis non a sem. Proin non neque blandit, porttitor ipsum sit amet, suscipit elit. Maecenas quis ex. Vivamus malesuada urna ut turpis venenatis finibus. Nulla tristique eget lectus quis congue. Donec dignissim neque sodales nunc eleifend, eu consectetur lacus viverra. Donec tempor nunc ac metus iaculis facilisis. Aenean sed tempor odio, nec ultricies leo.',
     imageGallery: [
       PhytoclassImg,
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
@@ -25,7 +48,6 @@ export const projectsData = [
     workflow: 'Data Ingestion → Session Isolation → Classification Engine → Report Generation',
     technicalHighlights: 'Built with rigorous CI/CD workflows for scientific software maintaining backwards compatibility.',
     challenges: 'Managing complex reactive dependencies in multi-user environments without state leakage.',
-    techStack: 'R, Shiny, GitHub Actions, testthat',
     developmentProcess: 'Developed over 3 months during Google Summer of Code, involving deep collaboration with IOOS.',
     performance: 'Reduced average data classification time by 45%.',
     implementationDetails: 'Utilized deep R native statistical packages mapped to dynamic UI components.',
