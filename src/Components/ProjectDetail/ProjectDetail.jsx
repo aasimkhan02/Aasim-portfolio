@@ -5,22 +5,53 @@ import './ProjectDetail.css';
 import Navbar from './../Navbar/Navbar'
 
 const AutoSlider = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    if (!images || images.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentSlide(prev => (prev + 1) % images.length);
-    }, 4000); // 4 seconds
-    return () => clearInterval(interval);
-  }, [images]);
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
   if (!images || images.length === 0) return null;
 
+  if (images.length === 1) {
+    return (
+      <div className="carousel-container">
+        <div className="carousel-track" style={{ transform: 'translateX(0)' }}>
+          <div className="carousel-slide active" style={{ left: '7.5%' }}>
+            <img src={images[0]} alt="Gallery slide 0" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const extendedImages = [images[images.length - 1], ...images, images[0]];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setCurrentSlide(prev => prev + 1);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (currentSlide === extendedImages.length - 1) {
+      const timeout = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentSlide(1);
+      }, 600);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentSlide, extendedImages.length]);
+
   return (
     <div className="carousel-container">
-      <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 87}%)` }}>
-        {images.map((img, idx) => (
+      <div 
+        className="carousel-track" 
+        style={{ 
+          transform: `translateX(-${currentSlide * 87}%)`,
+          transition: isTransitioning ? 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)' : 'none'
+        }}
+      >
+        {extendedImages.map((img, idx) => (
           <div
             key={idx}
             className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
@@ -30,18 +61,19 @@ const AutoSlider = ({ images }) => {
           </div>
         ))}
       </div>
-      {images.length > 1 && (
-        <div className="carousel-dots">
-          {images.map((_, idx) => (
-            <button
-              key={idx}
-              className={`carousel-dot ${idx === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
-        </div>
-      )}
+      <div className="carousel-dots">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            className={`carousel-dot ${idx + 1 === (currentSlide === extendedImages.length - 1 ? 1 : currentSlide) ? 'active' : ''}`}
+            onClick={() => {
+              setIsTransitioning(true);
+              setCurrentSlide(idx + 1);
+            }}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
@@ -76,20 +108,11 @@ const ProjectDetail = () => {
     { key: 'about', title: 'About the Project', data: project.about, splitLayout: true },
     { key: 'tagline', data: project.tagline, splitLayout: true, hideInMap: true },
     { key: 'techStack', title: 'Tech Stack', data: project.techStack },
-    { key: 'contributions', title: 'My Contributions', data: project.contributions },
-    { key: 'imageGallery', data: project.imageGallery },
-    { key: 'features', title: 'Features', data: project.features },
+    { key: 'features', title: 'Key Features', data: project.features },
     { key: 'architecture', title: 'Architecture', data: project.architecture },
-    { key: 'workflow', title: 'Workflow', data: project.workflow },
-    { key: 'technicalHighlights', title: 'Technical Highlights', data: project.technicalHighlights },
     { key: 'challenges', title: 'Challenges', data: project.challenges },
-    { key: 'developmentProcess', title: 'Development Process', data: project.developmentProcess },
-    { key: 'performance', title: 'Performance / Benchmarks', data: project.performance },
-    { key: 'implementationDetails', title: 'Implementation Details', data: project.implementationDetails },
-    { key: 'lessonsLearned', title: 'Lessons Learned', data: project.lessonsLearned },
-    { key: 'futureImprovements', title: 'Future Improvements', data: project.futureImprovements },
-    { key: 'links', title: 'GitHub & Live Demo', data: { github: project.githubLink, live: project.liveLink } },
-    { key: 'relatedProjects', title: 'Related Projects', data: project.relatedProjects }
+    { key: 'imageGallery', data: project.imageGallery },
+    { key: 'links', title: 'Links', data: { github: project.githubLink, live: project.liveLink } }
   ].filter(section => {
     if (section.hideInMap) return false;
     if (section.key === 'links') return section.data.github || section.data.live;
@@ -113,32 +136,58 @@ const ProjectDetail = () => {
       return <AutoSlider images={section.data} />;
     }
 
-    if (section.key === 'contributions') {
+    if (section.key === 'features') {
       return (
-        <div className="contributions-grid">
+        <div className="modern-features">
           {section.data.map((item, idx) => (
-            <div key={idx} className="contribution-card">
-              <div className="contribution-icon">
-                <div className="icon-box">
-                  {renderIcon(item.icon)}
-                </div>
-              </div>
-              <div className="contribution-meta">
-                <span className="contribution-step">{item.step}</span> / <span className="contribution-category">{item.category}</span>
-              </div>
-              <h3 className="contribution-title">{item.title}</h3>
-              <p className="contribution-desc">{item.desc}</p>
+            <div key={idx} className="modern-feature-card">
+              <span className="modern-feature-index">{(idx + 1).toString().padStart(2, '0')}</span>
+              <h3 className="modern-feature-title">{item.title}</h3>
+              <p className="modern-feature-desc">{item.desc}</p>
             </div>
           ))}
         </div>
       );
     }
 
+    if (section.key === 'architecture') {
+      return (
+        <div className="modern-architecture">
+          <div className="architecture-diagram-placeholder">
+            [ ARCHITECTURE DIAGRAM ]
+          </div>
+          <p className="architecture-text">{section.data}</p>
+        </div>
+      );
+    }
+
+    if (section.key === 'challenges') {
+      if (Array.isArray(section.data)) {
+        return (
+          <div className="modern-challenges">
+            {section.data.map((item, idx) => (
+              <div key={idx} className="modern-challenge-row">
+                <div className="challenge-col challenge-problem">
+                  <span className="challenge-label">Problem.</span>
+                  <p>{item.problem}</p>
+                </div>
+                <div className="challenge-col challenge-solution">
+                  <span className="challenge-label">Solution.</span>
+                  <p>{item.solution}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      }
+      return <p className="detail-text">{section.data}</p>;
+    }
+
     if (section.key === 'links') {
       return (
-        <div className="detail-links">
-          {section.data.github && <a href={section.data.github} target="_blank" rel="noreferrer" className="detail-link">GitHub Repository ↗</a>}
-          {section.data.live && <a href={section.data.live} target="_blank" rel="noreferrer" className="detail-link">Live Demo ↗</a>}
+        <div className="modern-links">
+          {section.data.github && <a href={section.data.github} target="_blank" rel="noreferrer" className="modern-button">GitHub ↗</a>}
+          {section.data.live && <a href={section.data.live} target="_blank" rel="noreferrer" className="modern-button">Live Demo ↗</a>}
         </div>
       );
     }

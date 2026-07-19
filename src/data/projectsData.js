@@ -1,195 +1,480 @@
-import HealthWaveImg from '../assets/healthwave.png';
+import HealthWaveImg from '../assets/healthwave1.jpg'
 import PhytoclassImg from '../assets/ocean.jpg';
 import ConstructionImg from '../assets/construction.jpg';
+import ValvoImg from '../assets/laptop.jpg'
+import ModelHQImg from '../assets/Modelhq.jpg'
+import QuizEliteImg from '../assets/laptop.jpg'
+
 
 export const projectsData = [
   {
-    id: 'phytoclass',
-    title: 'PHYTOCLASS - Open source phytoplankton platform.',
-    tagline: 'An open-source platform built to simplify phytoplankton classification and analysis.',
-    techStack: 'R, Shiny, GitHub Actions, testthat',
-    categories: ['R', 'Shiny', 'GitHub Actions', 'testthat'],
-    summary: 'Open-source phytoplankton classification platform',
-    coverImage: PhytoclassImg,
-    contributions: [
-      {
-        step: '01',
-        category: 'ARCHITECTURE',
-        title: 'CORE LOGIC DESIGN',
-        desc: 'Spearheaded the design of the low-latency message broker using a customized Ring Buffer implementation. Reduced processing overhead by 15% through lock-free concurrency patterns.',
-        icon: 'cpu'
-      },
-      {
-        step: '02',
-        category: 'DEPLOYMENT',
-        title: 'SCALING STRATEGY',
-        desc: 'Orchestrated a container-native scaling strategy that allowed the system to expand from 10 to 500 nodes in under 2 minutes, ensuring zero-downtime deployments.',
-        icon: 'network'
-      },
-      {
-        step: '03',
-        category: 'SECURITY',
-        title: 'SECURE PROTOCOLS',
-        desc: 'Integrated end-to-end hardware-level encryption (HSM integration) for sensitive data transit, meeting the strictest industrial compliance standards.',
-        icon: 'shield'
-      }
-    ],
-    about: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus eu lectus et ultrices. Donec scelerisque pretium velit id bibendum. Nullam id facilisis massa. Aenean aliquam suscipit est, sed sagittis risus pharetra a. Vivamus nec lacus dui. Sed odio orci, tincidunt iaculis dapibus id, elementum at purus. Praesent molestie libero vel purus varius, lobortis tincidunt orci ullamcorper. Ut ut lorem orci. Proin ut lectus a nunc efficitur lobortis non a sem. Proin non neque blandit, porttitor ipsum sit amet, suscipit elit. Maecenas quis quam ex. Vivamus malesuada urna ut turpis venenatis finibus. Nulla tristique eget lectus quis congue. Donec dignissim neque sodales nunc eleifend, eu consectetur lacus viverra. Donec tempor nunc ac metus iaculis facilisis. Aenean sed tempor odio, nec ultricies leo. Ut ut lorem orci. Proin ut lectus a nunc efficitur lobortis non a sem. Proin non neque blandit, porttitor ipsum sit amet, suscipit elit. Maecenas quis ex. Vivamus malesuada urna ut turpis venenatis finibus. Nulla tristique eget lectus quis congue. Donec dignissim neque sodales nunc eleifend, eu consectetur lacus viverra. Donec tempor nunc ac metus iaculis facilisis. Aenean sed tempor odio, nec ultricies leo.',
-    imageGallery: [
-      PhytoclassImg,
-      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80'
-    ],
-    features: [
-      { title: 'Interactive Interface', desc: 'Real-time analysis and visualization of cytometry data.' },
-      { title: 'Session Isolation', desc: 'Secure, multi-user environment handling concurrent operations.' },
-      { title: 'Automated Testing', desc: 'Comprehensive test suites ensuring reliability across updates.' }
-    ],
-    architecture: 'R and Shiny backend architecture utilizing modular session isolation.',
-    workflow: 'Data Ingestion → Session Isolation → Classification Engine → Report Generation',
-    technicalHighlights: 'Built with rigorous CI/CD workflows for scientific software maintaining backwards compatibility.',
-    challenges: 'Managing complex reactive dependencies in multi-user environments without state leakage.',
-    developmentProcess: 'Developed over 3 months during Google Summer of Code, involving deep collaboration with IOOS.',
-    performance: 'Reduced average data classification time by 45%.',
-    implementationDetails: 'Utilized deep R native statistical packages mapped to dynamic UI components.',
-    lessonsLearned: 'Gained deep experience in maintaining open-source tools and building robust reactive architectures in R.',
-    futureImprovements: 'Integrating LLM-assisted anomaly detection for flow cytometry artifacts.',
-    githubLink: '#',
-    liveLink: '#',
-    relatedProjects: 'EVUA, HealthWave'
+  id: 'phytoclass',
+  title: 'PHYTOCLASS - Open-source phytoplankton platform.',
+  tagline: 'An open-source platform built to simplify phytoplankton classification',
+  techStack: 'R, Shiny, GitHub Actions, testthat, Git',
+  categories: ['R', 'Shiny', 'GitHub Actions', 'testthat', 'Git'],
+  summary: 'Open-source phytoplankton classification platform',
+  coverImage: PhytoclassImg,
+
+  about:
+    'PhytoClass is an open-source R/Shiny application that helps researchers classify and analyze phytoplankton using flow cytometry data. During Google Summer of Code, I contributed to improving the application by implementing session-based file isolation, report export functionality, validation workflows, and automated testing to make the platform more reliable and easier to use for multiple users.',
+
+  contributions: [
+    {
+      step: '01',
+      category: 'MULTI-USER SUPPORT',
+      title: 'SESSION ISOLATION',
+      desc: 'Implemented session-based file isolation to ensure users could analyze datasets independently without file conflicts or shared state.',
+      icon: 'folder'
+    },
+    {
+      step: '02',
+      category: 'REPORTING',
+      title: 'EXPORT WORKFLOW',
+      desc: 'Added support for exporting analysis reports in HTML, QMD, and CSV formats to improve reproducibility and simplify sharing results.',
+      icon: 'file'
+    },
+    {
+      step: '03',
+      category: 'RELIABILITY',
+      title: 'VALIDATION & TESTING',
+      desc: 'Improved input validation and integrated automated testing with GitHub Actions and testthat to maintain application stability.',
+      icon: 'shield'
+    }
+  ],
+
+  imageGallery: [
+    PhytoclassImg
+  ],
+
+  features: [
+    {
+      title: 'Interactive Analysis',
+      desc: 'Analyze and classify phytoplankton through an intuitive R/Shiny interface.'
+    },
+    {
+      title: 'Session Isolation',
+      desc: 'Supports multiple concurrent users with isolated working directories.'
+    },
+    {
+      title: 'Report Exports',
+      desc: 'Generate HTML, QMD, and CSV reports directly from the application.'
+    },
+    {
+      title: 'Automated Testing',
+      desc: 'Continuous validation using GitHub Actions and testthat.'
+    }
+  ],
+
+  challenges: [
+    {
+      problem: 'Supporting multiple concurrent users.',
+      solution: 'Introduced isolated session directories to prevent conflicts between uploaded datasets.'
+    },
+    {
+      problem: 'Maintaining application reliability.',
+      solution: 'Added validation checks and automated tests to catch regressions before deployment.'
+    },
+    {
+      problem: 'Sharing analysis results.',
+      solution: 'Implemented report generation in multiple formats for reproducibility and collaboration.'
+    }
+  ],
+
+  githubLink: '#',
+  liveLink: '#',
   },
   {
     id: 'evua',
-    title: 'EVUA',
-    categories: ['Python', 'FastAPI', 'React', 'SQLite'],
-    summary: 'A legacy code modernization platform automating the migration of outdated codebases.',
-    coverImage: ConstructionImg,
-    about: 'EVUA is a modernization platform that tackles the massive bottleneck of rewriting outdated codebases using AST-based transformations and LLM-assisted fallbacks.',
-    imageGallery: [
-      ConstructionImg,
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80'
-    ],
-    features: [
-      { title: 'AST transformations', desc: 'Precise syntax tree manipulations ensuring accurate code rewrites.' },
-      { title: 'Repository-wide orchestration', desc: 'Handling massive multi-file dependencies concurrently.' },
-      { title: 'LLM fallbacks', desc: 'Smart AI interventions for when deterministic rules fail.' }
-    ],
-    architecture: 'Microservice-based, utilizing FastAPI for I/O and Tree-sitter for AST generation.',
-    workflow: 'AST Parsing → Transformation → LLM Fallback → Validation',
-    technicalHighlights: 'Fallback pipelines where failed AST rewrites gracefully trigger LLM-assisted correction.',
-    challenges: 'Handling malformed legacy syntax and maintaining state across a massive codebase.',
-    techStack: 'Python, FastAPI, React, SQLite, Tree-sitter',
-    developmentProcess: 'Iterative refinement of AST rules tested against 100+ legacy repositories.',
-    performance: 'Processes 10,000 LOC/minute with 98% accuracy.',
-    implementationDetails: 'Custom wrapper around Tree-sitter for language-agnostic parsing.',
-    lessonsLearned: 'Deepened understanding of compiler theory and orchestrating AI reliably within deterministic workflows.',
-    futureImprovements: 'Expanding language support to Java and C++.',
-    githubLink: '#',
-    liveLink: '#',
-    relatedProjects: 'Phytoclass'
+
+  title: 'EVUA — Legacy code modernization platform.',
+
+  tagline:
+    'An AI-assisted platform for automating large-scale legacy code migrations.',
+
+  categories: [
+    'Python',
+    'FastAPI',
+    'React',
+    'SQLite',
+    'Tree-sitter',
+    'OpenAI'
+  ],
+
+  techStack:
+    'Python, FastAPI, React, SQLite, Tree-sitter, OpenAI API',
+
+  summary:
+    'A platform that modernizes legacy codebases through AST-based transformations and AI-assisted refactoring.',
+
+  coverImage: ConstructionImg,
+
+  about:
+    'EVUA is a legacy code modernization platform designed to automate the migration of outdated software. It combines deterministic AST-based transformations with LLM-assisted fallbacks to refactor unsupported code patterns, validate generated changes, and streamline repository-wide modernization through a unified workflow.',
+
+  features: [
+    {
+      title: 'AST-Based Refactoring',
+      desc: 'Transforms source code using syntax trees for deterministic and reliable code migrations.'
+    },
+    {
+      title: 'AI-Assisted Fallbacks',
+      desc: 'Uses LLMs when predefined transformation rules cannot safely handle a code pattern.'
+    },
+    {
+      title: 'Repository-Wide Processing',
+      desc: 'Applies migrations consistently across entire repositories while preserving project structure.'
+    },
+    {
+      title: 'Validation Pipeline',
+      desc: 'Validates transformed code before finalizing migrations to reduce migration errors.'
+    }
+  ],
+
+  imageGallery: [
+    ConstructionImg
+  ],
+
+  architecture:
+    'React frontend communicating with a FastAPI backend responsible for repository analysis, AST transformations, AI-assisted migration, and validation.',
+
+  workflow:
+    'Repository → AST Parsing → Rule-Based Transformation → LLM Fallback → Validation → Updated Codebase',
+
+  challenges: [
+    {
+      problem:
+        'Legacy repositories often contain inconsistent or unsupported code patterns.',
+      solution:
+        'Combined deterministic AST transformations with LLM-assisted fallbacks to handle cases that cannot be expressed using predefined rules.'
+    },
+    {
+      problem:
+        'Maintaining code structure while applying repository-wide migrations.',
+      solution:
+        'Designed the migration workflow to preserve project organization while applying automated transformations.'
+    },
+    {
+      problem:
+        'Balancing automation with reliability.',
+      solution:
+        'Introduced a validation stage before accepting generated changes to reduce incorrect transformations.'
+    }
+  ],
+
+  githubLink: '#',
+
+  liveLink: '#',
   },
   {
     id: 'healthwave',
-    title: 'HEALTHWAVE',
-    categories: ['React', 'Node.js', 'MongoDB'],
-    summary: 'A modern healthcare management application streamlining patient records.',
-    coverImage: HealthWaveImg,
-    about: 'Designed to streamline patient records and appointment scheduling to reduce administrative overhead.',
-    imageGallery: [
-      HealthWaveImg
-    ],
-    features: [
-      { title: 'Real-time Updates', desc: 'Instant synchronization of patient records across devices.' },
-      { title: 'Secure Auth', desc: 'Encrypted communication and Role-Based Access Control.' }
-    ],
-    architecture: 'MERN stack with WebSockets for real-time synchronization.',
-    workflow: 'Authentication → Dashboard Routing → Real-time Syncing → Record Management',
-    technicalHighlights: 'HIPAA-compliant data handling practices.',
-    challenges: 'Balancing strict security requirements with a fluid, responsive user experience.',
-    techStack: 'React, Node.js, Express, MongoDB, Socket.io',
-    developmentProcess: 'Developed with continuous feedback from medical professionals.',
-    performance: 'Sub-100ms sync latency across concurrent clinic clients.',
-    implementationDetails: 'Implemented custom hooks for managing complex local state bound to WebSocket events.',
-    lessonsLearned: 'Data security architecture in real-time environments.',
-    futureImprovements: 'AI-assisted diagnosis pre-screening module.',
-    githubLink: '#',
-    liveLink: '#',
-    relatedProjects: 'EVUA'
+
+  title: 'HEALTHWAVE — Healthcare information platform.',
+
+  tagline:
+    'A web platform that brings together health information, disease prediction, and educational resources.',
+
+  categories: [
+    'React',
+    'Django',
+    'SQLite'
+  ],
+
+  techStack:
+    'React, Django, SQLite',
+
+  summary:
+    'A healthcare platform providing medication information, disease prediction, and educational resources.',
+
+  coverImage: HealthWaveImg,
+
+  about:
+    'HealthWave is a full-stack healthcare platform that helps users access medical information in one place. It combines medication details, disease prediction models, and educational content through a simple web interface, making healthcare resources easier to explore and understand.',
+
+  imageGallery: [
+    HealthWaveImg
+  ],
+
+  features: [
+    {
+      title: 'Medication Information',
+      desc: 'Browse medicine details including usage, dosage information, and precautions.'
+    },
+    {
+      title: 'Disease Prediction',
+      desc: 'Predict potential health conditions using machine learning models based on user inputs.'
+    },
+    {
+      title: 'Health Education',
+      desc: 'Access educational videos and healthcare resources from within the platform.'
+    },
+    {
+      title: 'Unified Dashboard',
+      desc: 'Access healthcare tools and information through a single web application.'
+    }
+  ],
+
+  challenges: [
+    {
+      problem:
+        'Bringing multiple healthcare utilities into one application.',
+      solution:
+        'Designed a modular backend where each feature could operate independently while sharing a common interface.'
+    },
+    {
+      problem:
+        'Integrating machine learning predictions with the web application.',
+      solution:
+        'Connected trained prediction models to the Django backend through dedicated API endpoints.'
+    },
+    {
+      problem:
+        'Presenting medical information in a simple interface.',
+      solution:
+        'Built reusable React components to organize content into an easy-to-navigate experience.'
+    }
+  ],
+
+  githubLink: '#',
+
+  liveLink: '#',
   },
   {
-    id: 'fisher-paykel',
-    title: 'Fisher & Paykel NYC',
-    categories: ['Architecture', 'Interior'],
-    summary: 'A new angle on design.',
-    coverImage: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80',
-    about: 'A structural exploration of modern appliances in a minimalist setting.',
-    imageGallery: [
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80'
-    ],
-    features: [],
-    architecture: '',
-    workflow: '',
-    technicalHighlights: '',
-    challenges: '',
-    techStack: '',
-    developmentProcess: '',
-    performance: '',
-    implementationDetails: '',
-    lessonsLearned: '',
-    futureImprovements: '',
-    githubLink: '',
-    liveLink: '',
-    relatedProjects: ''
+    id: 'valvo',
+
+  title: 'VALVO — Distributed rate limiting system.',
+
+  tagline:
+    'A high-performance distributed rate limiter with an AI-powered control plane.',
+
+  categories: [
+    'Go',
+    'Redis',
+    'Lua',
+    'gRPC'
+  ],
+
+  techStack:
+    'Go, Redis, Lua, gRPC',
+
+  summary:
+    'A distributed rate limiting system built for low-latency admission control and scalable API traffic management.',
+
+  coverImage: ValvoImg,
+
+  about:
+    'Valvo (P.A.R.L-AI) is a distributed rate limiting system designed to enforce multi-dimensional quotas with microsecond-level decision latency. It combines deterministic admission control with an AI-powered control plane, enabling fast local decisions while maintaining bounded global correctness across distributed environments. The system supports repository-scale deployments through Redis-backed coordination, atomic Lua operations, and pluggable rate limiting strategies.' ,
+
+  imageGallery: [
+    ValvoImg
+  ],
+
+  features: [
+    {
+      title: 'Distributed Rate Limiting',
+      desc: 'Enforces quotas across multiple nodes using Redis-backed synchronization.'
+    },
+    {
+      title: 'Multiple Algorithms',
+      desc: 'Implements Token Bucket and Sliding Window algorithms for different traffic patterns.'
+    },
+    {
+      title: 'Atomic Redis Operations',
+      desc: 'Uses Lua scripts to perform concurrency-safe quota updates with minimal network overhead.'
+    },
+    {
+      title: 'Multi-Dimensional Quotas',
+      desc: 'Supports rate limits based on tenant, region, API resource, and user identifiers.'
+    },
+    {
+      title: 'Tiered Admission Decisions',
+      desc: 'Returns ALLOW, SOFT_DENY, or HARD_DENY responses depending on quota availability.'
+    },
+    {
+      title: 'Observability',
+      desc: 'Collects metrics for throughput, Redis health, quota overshoot, and burst prediction.'
+    }
+  ],
+
+  challenges: [
+    {
+      problem:
+        'Maintaining consistent quota enforcement across distributed nodes.',
+      solution:
+        'Implemented Redis-backed coordination with bounded quota leases to reduce global synchronization while maintaining correctness.'
+    },
+    {
+      problem:
+        'Supporting high request throughput without introducing network latency.',
+      solution:
+        'Designed a memory-resident fast path so admission decisions avoid external network calls during normal execution.'
+    },
+    {
+      problem:
+        'Preventing race conditions during concurrent updates.',
+      solution:
+        'Implemented atomic token bucket operations using Redis Lua scripts.'
+    }
+  ],
+
+  githubLink: '#',
+
+  liveLink: '#',
   },
   {
-    id: 'interior-atlanta',
-    title: 'Interior Atlanta Showroom',
-    categories: ['Architecture', 'Acoustics'],
-    summary: 'Designing with sound.',
-    coverImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
-    about: 'Showcasing acoustic design integrated beautifully with workspace aesthetics.',
-    imageGallery: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80'
-    ],
-    features: [],
-    architecture: '',
-    workflow: '',
-    technicalHighlights: '',
-    challenges: '',
-    techStack: '',
-    developmentProcess: '',
-    performance: '',
-    implementationDetails: '',
-    lessonsLearned: '',
-    futureImprovements: '',
-    githubLink: '',
-    liveLink: '',
-    relatedProjects: ''
+    id: 'modelhq',
+
+  title: 'MODELHQ — AI model discovery platform.',
+
+  tagline:
+    'An educational platform for exploring, understanding, and using machine learning models.',
+
+  categories: [
+    'React',
+    'FastAPI',
+    'Python',
+    'Machine Learning'
+  ],
+
+  techStack:
+    'React, FastAPI, Python, scikit-learn',
+
+  summary:
+    'A platform that brings together machine learning models from multiple domains with interactive predictions, research references, and implementation guides.',
+
+  coverImage: ModelHQImg,
+
+  about:
+    'ModelHQ is a full-stack platform that makes machine learning models accessible through a unified web interface. Users can run predictions, explore research-backed implementations, download source code, and understand each model through line-by-line code explanations. Designed as both an educational resource and a practical demonstration of applied machine learning, the platform spans domains including healthcare, finance, business, and real estate.',
+
+  imageGallery: [
+    ModelHQImg
+  ],
+
+  features: [
+    {
+      title: 'Interactive Predictions',
+      desc: 'Run machine learning models directly from the browser through a FastAPI backend.'
+    },
+    {
+      title: 'Research-Based Models',
+      desc: 'Implements prediction models inspired by published research across multiple domains.'
+    },
+    {
+      title: 'Code Explanations',
+      desc: 'Provides line-by-line explanations to help users understand each implementation.'
+    },
+    {
+      title: 'Source Code Downloads',
+      desc: 'Allows users to download model implementations for further experimentation.'
+    },
+    {
+      title: 'Multi-Domain Library',
+      desc: 'Includes healthcare, finance, HR, communication, and real-estate prediction models.'
+    }
+  ],
+
+  challenges: [
+    {
+      problem:
+        'Providing a consistent interface for models with different inputs and prediction pipelines.',
+      solution:
+        'Designed reusable frontend components and standardized backend APIs for model execution.'
+    },
+    {
+      problem:
+        'Making machine learning implementations accessible to beginners.',
+      solution:
+        'Added downloadable source code together with line-by-line explanations for every model.'
+    },
+    {
+      problem:
+        'Managing multiple models within a single application.',
+      solution:
+        'Organized the platform into modular backend services that allow new models to be integrated with minimal changes.'
+    }
+  ],
+
+  githubLink: '#',
+
+  liveLink: '#',
   },
   {
-    id: 'office-berlin',
-    title: 'Modern office Berlin',
-    categories: ['Commercial', 'Space Planning'],
-    summary: 'Elevating the workspace.',
-    coverImage: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80',
-    about: 'A study in concrete and light to inspire productivity.',
-    imageGallery: [
-      'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80'
-    ],
-    features: [],
-    architecture: '',
-    workflow: '',
-    technicalHighlights: '',
-    challenges: '',
-    techStack: '',
-    developmentProcess: '',
-    performance: '',
-    implementationDetails: '',
-    lessonsLearned: '',
-    futureImprovements: '',
-    githubLink: '',
-    liveLink: '',
-    relatedProjects: ''
+    id: 'quizelite',
+
+  title: 'QUIZELITE — Online quiz platform.',
+
+  tagline:
+    'A full-stack platform for creating, hosting, and participating in interactive quizzes.',
+
+  categories: [
+    'Django',
+    'Python',
+    'JavaScript',
+    'SQLite'
+  ],
+
+  techStack:
+    'Django, Python, HTML, CSS, JavaScript, SQLite',
+
+  summary:
+    'A web application that allows users to create, host, and participate in interactive quizzes across multiple subjects.',
+
+  coverImage: QuizEliteImg,
+
+  about:
+    'QuizElite is a full-stack quiz platform designed for learning and assessment. It offers a collection of ready-to-play quizzes while allowing registered users to create, host, and share their own quizzes. The platform includes authentication, score tracking, and quiz sharing through unique access codes, making it suitable for classrooms, study groups, and self-paced learning.',
+
+  imageGallery: [
+    QuizEliteImg
+  ],
+
+  features: [
+    {
+      title: 'Ready-to-Play Quizzes',
+      desc: 'Explore 20+ quizzes across science, history, technology, and general knowledge.'
+    },
+    {
+      title: 'Quiz Creation',
+      desc: 'Create custom quizzes with your own questions and answers.'
+    },
+    {
+      title: 'Quiz Sharing',
+      desc: 'Invite others using unique quiz codes for collaborative learning.'
+    },
+    {
+      title: 'User Authentication',
+      desc: 'Register, log in, and manage quizzes through secure user accounts.'
+    },
+    {
+      title: 'Instant Scoring',
+      desc: 'Receive immediate feedback and final scores after completing a quiz.'
+    }
+  ],
+
+  challenges: [
+    {
+      problem:
+        'Supporting both predefined and user-generated quizzes within a single platform.',
+      solution:
+        'Designed reusable Django models and views to manage quizzes, questions, and user submissions.'
+    },
+    {
+      problem:
+        'Providing a simple way to share quizzes.',
+      solution:
+        'Implemented unique access codes that allow users to join custom quizzes without exposing internal identifiers.'
+    },
+    {
+      problem:
+        'Managing authentication and user-owned content.',
+      solution:
+        'Integrated Django authentication to secure accounts and restrict quiz management to their respective creators.'
+    }
+  ],
+
+  githubLink: '#',
+
+  liveLink: '#',
   }
 ];
