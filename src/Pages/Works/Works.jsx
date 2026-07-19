@@ -23,7 +23,7 @@ const Works = () => {
       <main className="works-page bg-white">
         <section className="works-hero section-padding pb-0">
           <div className="container works-hero-container">
-            <h1 className="works-hero-title">
+            <h1 className="works-hero-title" data-aos="fade-up">
               SELECTED<br />WORKS
             </h1>
             <div className="works-hero-desc">
@@ -49,9 +49,9 @@ const Works = () => {
           {projectRows.map((row, rowIndex) => (
             <div key={rowIndex} className="works-row">
               {row.map((project) => (
-                <Link to={`/project/${project.id}`} key={project.id} className="works-ref-card">
+                <Link to={`/project/${project.id}`} key={project.id} className="works-ref-card" data-aos="fade-up">
                   <div className="ref-image-wrapper">
-                    <img src={project.coverImage} alt={project.title} className="ref-image" />
+                    <img src={project.coverImage} alt={project.title} className="ref-image" loading="lazy" />
                   </div>
                   <h3 className="ref-title">{project.title}</h3>
                 </Link>

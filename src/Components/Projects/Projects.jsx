@@ -27,16 +27,17 @@ const Projects = () => {
   return (
     <section className="section-padding bg-white" id="projects" style={{ paddingBottom: '2rem' }}>
       <div className="container">
-        <h2 className="projects-section-title mb-24 uppercase">Selected Work</h2>
+        <h2 className="projects-section-title mb-24 uppercase" data-aos="fade-up">Selected Work</h2>
 
         <div className="projects-list">
           {featuredProjects.map((project) => (
-            <article key={project.id} className="project-card">
+            <article key={project.id} className="project-card" data-aos="fade-up">
               <div className="project-image-wrapper">
                 <img
                   src={project.coverImage}
                   alt={project.title}
                   className="project-image"
+                  loading="lazy"
                 />
               </div>
 

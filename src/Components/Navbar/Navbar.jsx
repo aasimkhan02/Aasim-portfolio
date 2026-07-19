@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="nav-brand">
             <div className="brand-dot"></div>
-            <a href="#">Aasim</a>
+            <Link to="/">Aasim</Link>
           </div>
 
           {/* Desktop Links */}

@@ -15,7 +15,7 @@ const AutoSlider = ({ images }) => {
       <div className="carousel-container">
         <div className="carousel-track" style={{ transform: 'translateX(0)' }}>
           <div className="carousel-slide active" style={{ left: '7.5%' }}>
-            <img src={images[0]} alt="Gallery slide 0" />
+            <img src={images[0]} alt="Gallery slide 0" loading="lazy" />
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const AutoSlider = ({ images }) => {
             className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
             style={{ left: `${idx * 87 + 7.5}%` }}
           >
-            <img src={img} alt={`Gallery slide ${idx}`} />
+            <img src={img} alt={`Gallery slide ${idx}`} loading="lazy" />
           </div>
         ))}
       </div>
@@ -233,7 +233,7 @@ const ProjectDetail = () => {
       <section className="detail-content-section">
         {sections.map((section) => {
           return (
-            <div className={`detail-row ${section.splitLayout ? 'split-layout' : ''}`} key={section.key}>
+            <div className={`detail-row ${section.splitLayout ? 'split-layout' : ''}`} key={section.key} data-aos="fade-up">
               {section.title && <h2 className="detail-heading">{section.title}</h2>}
               <div className="detail-content-wrapper">
                 {renderContent(section)}

@@ -7,17 +7,18 @@ const About = () => {
     <section className="section-padding bg-surface-container-low" id="about">
       <div className="container about-grid items-start">
         <div className="about-image-container">
-          <div className="about-image-wrapper">
+          <div className="about-image-wrapper" data-aos="fade-right">
             <img 
               alt="Mohd Aasim Portrait" 
               className="about-image" 
               src={ProfilePicture}
+              loading="lazy"
             />
           </div>
           <div className="about-blob"></div>
         </div>
         
-        <div className="about-content">
+        <div className="about-content" data-aos="fade-left">
           <p className="section-label mb-6">About Me</p>
           <h2 className="about-headline">
             Building software through curiosity, consistency, and continuous learning.
