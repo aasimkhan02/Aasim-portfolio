@@ -22,7 +22,7 @@ const App = () => {
 
     AOS.init({
       duration: 800,
-      once: false,
+      once: true,
       offset: 100,
     });
     

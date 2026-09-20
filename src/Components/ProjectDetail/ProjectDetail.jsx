@@ -15,7 +15,7 @@ const AutoSlider = ({ images }) => {
       <div className="carousel-container">
         <div className="carousel-track" style={{ transform: 'translateX(0)' }}>
           <div className="carousel-slide active" style={{ left: '7.5%' }}>
-            <img src={images[0]} alt="Gallery slide 0" loading="lazy" />
+            <img src={images[0]} alt="Gallery slide 0" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const AutoSlider = ({ images }) => {
             className={`carousel-slide ${idx === currentSlide ? 'active' : ''}`}
             style={{ left: `${idx * 87 + 7.5}%` }}
           >
-            <img src={img} alt={`Gallery slide ${idx}`} loading="lazy" />
+            <img src={img} alt={`Gallery slide ${idx}`} loading="lazy" decoding="async" />
           </div>
         ))}
       </div>

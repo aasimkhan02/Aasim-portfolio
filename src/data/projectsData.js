@@ -1,14 +1,17 @@
-import HealthWaveImg from '../assets/healthwave1.jpg'
-import PhytoclassImg from '../assets/ocean.jpg';
-import ConstructionImg from '../assets/construction.jpg';
-import ValvoImg from '../assets/laptop.jpg'
-import ModelHQImg from '../assets/Modelhq.jpg'
-import QuizEliteImg from '../assets/laptop.jpg'
+import HealthWaveImg from '../assets/healthwave1.webp'
+import PhytoclassImg from '../assets/ocean.webp';
+import ConstructionImg from '../assets/construction.webp';
+import ValvoImg from '../assets/ratelimiter.webp'
+import ThreatboxImg from '../assets/threatbox.webp'
+import ModelHQImg from '../assets/Modelhq.webp'
+import QuizEliteImg from '../assets/laptop.webp'
+
 
 
 export const projectsData = [
   {
   id: 'phytoclass',
+  type: 'SOFTWARE',
   title: 'PHYTOCLASS - Open-source phytoplankton platform.',
   tagline: 'An open-source platform built to simplify phytoplankton classification',
   techStack: 'R, Shiny, GitHub Actions, testthat, Git',
@@ -81,11 +84,97 @@ export const projectsData = [
     }
   ],
 
-  githubLink: '#',
-  liveLink: '#',
+  githubLink: 'https://github.com/phytoclass',
+  liveLink: 'https://phytoclass.shinyapps.io/phytoclass-app/',
   },
   {
-    id: 'evua',
+  id: 'threatbox',
+  type: 'BACKEND',
+
+  title: 'THREATBOX — Malware analysis sandbox.',
+
+  tagline:
+    'A backend-driven platform for analyzing suspicious files through an isolated malware analysis workflow.',
+
+  categories: [
+    'Go',
+    'PostgreSQL',
+    'Docker',
+    'REST API',
+    'Security',
+    'Malware Analysis'
+  ],
+
+  techStack:
+    'Go, PostgreSQL, Docker, pgx, REST API, strace',
+
+  summary:
+    'A malware analysis platform built around reliable job processing, sample management, behavioral monitoring, and structured analysis results.',
+
+  coverImage: ThreatboxImg,
+
+  about:
+    'ThreatBox is a malware analysis platform designed to process suspicious files through a structured analysis pipeline. It uses a Go backend with PostgreSQL to manage samples, analysis jobs, workers, events, and results. The system separates job scheduling from processing and is designed to collect system-level activity during malware execution for behavioral analysis.',
+
+  features: [
+    {
+      title: 'Sample Management',
+      desc:
+        'Handles suspicious file uploads and maintains persistent sample metadata and analysis state.'
+    },
+    {
+      title: 'Job Processing Pipeline',
+      desc:
+        'Uses PostgreSQL-backed jobs to coordinate analysis work between the API and background workers.'
+    },
+    {
+      title: 'Behavioral Monitoring',
+      desc:
+        'Uses system-call monitoring with strace as the foundation for collecting process and system activity during analysis.'
+    },
+    {
+      title: 'Structured Analysis Results',
+      desc:
+        'Stores analysis events and results in PostgreSQL for later inspection, reporting, and visualization.'
+    }
+  ],
+
+  imageGallery: [
+    ThreatboxImg
+  ],
+
+  architecture:
+    'Go REST API communicating with PostgreSQL for sample and job management, with background workers responsible for executing analysis and storing structured results.',
+
+  workflow:
+    'File Upload → Sample Storage → Job Creation → Worker Claims Job → Malware Processing → Event Collection → Analysis Results',
+
+  challenges: [
+    {
+      problem:
+        'Building a reliable workflow for processing malware analysis jobs.',
+      solution:
+        'Separated sample management, job scheduling, worker execution, processing, and result storage into distinct stages with explicit database state transitions.'
+    },
+    {
+      problem:
+        'Coordinating background workers without losing or duplicating jobs.',
+      solution:
+        'Implemented database-backed job claiming and lifecycle management so workers can safely acquire and process pending analysis jobs.'
+    },
+    {
+      problem:
+        'Collecting useful behavioral information from analyzed samples.',
+      solution:
+        'Designed the processing pipeline around system-call and process monitoring with strace to capture activity that can later be mapped to behavioral indicators.'
+    }
+  ],
+
+  githubLink: 'https://github.com/aasimkhan02/ThreatBox',
+  },
+  {
+  id: 'evua',
+  type: 'SOFTWARE',
 
   title: 'EVUA — Legacy code modernization platform.',
 
@@ -162,12 +251,13 @@ export const projectsData = [
     }
   ],
 
-  githubLink: '#',
+  githubLink: 'https://github.com/aasimkhan02/EVUA/',
 
-  liveLink: '#',
+  liveLink: 'https://evua.vercel.app/',
   },
   {
     id: 'healthwave',
+    type: 'SOFTWARE',
 
   title: 'HEALTHWAVE — Healthcare information platform.',
 
@@ -235,12 +325,11 @@ export const projectsData = [
     }
   ],
 
-  githubLink: '#',
-
-  liveLink: '#',
+  githubLink: 'https://github.com/aasimkhan02/healthwave',
   },
   {
     id: 'valvo',
+    type: 'INFRASTRUCTURE',
 
   title: 'VALVO — Distributed rate limiting system.',
 
@@ -317,12 +406,12 @@ export const projectsData = [
     }
   ],
 
-  githubLink: '#',
+  githubLink: 'https://github.com/aasimkhan02/Valvo',
 
-  liveLink: '#',
   },
   {
     id: 'modelhq',
+    type: 'SOFTWARE',
 
   title: 'MODELHQ — AI model discovery platform.',
 
@@ -395,12 +484,12 @@ export const projectsData = [
     }
   ],
 
-  githubLink: '#',
+  githubLink: 'https://github.com/aasimkhan02/modelhq',
 
-  liveLink: '#',
   },
   {
     id: 'quizelite',
+    type: 'SOFTWARE',
 
   title: 'QUIZELITE — Online quiz platform.',
 
@@ -473,8 +562,7 @@ export const projectsData = [
     }
   ],
 
-  githubLink: '#',
+  githubLink: 'https://github.com/aasimkhan02/quizelite',
 
-  liveLink: '#',
   }
 ];

@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import ProfilePicture from "./../../assets/profile.png"
+import ProfilePicture from "./../../assets/profile.webp"
 
 const About = () => {
   return (
@@ -13,6 +13,7 @@ const About = () => {
               className="about-image" 
               src={ProfilePicture}
               loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="about-blob"></div>

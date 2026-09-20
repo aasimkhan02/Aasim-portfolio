@@ -37,7 +37,7 @@ const Navbar = () => {
           {/* Mobile & Actions Section */}
           <div className="flex items-center gap-6">
             {/* Resume Link */}
-            <a href="#" className="resume-btn group">
+            <a href="/resume.pdf" download="Resume.pdf" className="resume-btn group">
               <span>Resume</span>
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 

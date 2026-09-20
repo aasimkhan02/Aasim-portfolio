@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
-import PhytoclassImg from '../../assets/ocean.jpg';
-import ConstructionImg from '../../assets/construction.jpg';
+import PhytoclassImg from '../../assets/ocean.webp';
+import ConstructionImg from '../../assets/construction.webp';
 
 const featuredProjects = [
   {
@@ -38,6 +38,7 @@ const Projects = () => {
                   alt={project.title}
                   className="project-image"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
