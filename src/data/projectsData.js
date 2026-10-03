@@ -1,6 +1,6 @@
 import HealthWaveImg from '../assets/healthwave.png'
 import PhytoclassImg from '../assets/Phytoclass.png';
-import ConstructionImg from '../assets/construction.webp';
+import ConstructionImg from '../assets/construction.jpg';
 import ValvoImg from '../assets/valvo.png'
 import ThreatboxImg from '../assets/Threatbox.png'
 import EVUAImg from '../assets/EVUA.png'
