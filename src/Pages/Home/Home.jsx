@@ -5,6 +5,7 @@ import About from '../../Components/About/About';
 import Skills from '../../Components/Skills/Skills';
 import SocialSidebar from '../../Components/SocialSidebar/SocialSidebar';
 import Projects from '../../Components/Projects/Projects';
+import Experience from '../../Components/Experience/Experience';
 import FAQ from '../../Components/FAQ/FAQ';
 import Contact from '../../Components/Contact/Contact';
 
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero />
       <About />
       <Skills />
+      <Experience />
       <Projects />
       <FAQ />
       <Contact />

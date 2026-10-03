@@ -1,5 +1,5 @@
 .faq-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 6vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--on-surface);
@@ -13,9 +13,15 @@
 
 .faq-item {
   border-bottom: 1px solid var(--border-color);
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .faq-item {
+    padding: 2rem 0;
+  }
 }
 
 .faq-item:hover .faq-question {
@@ -26,12 +32,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .faq-question-left {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .faq-question-left {
+    gap: 1.5rem;
+  }
 }
 
 .faq-num {
@@ -42,7 +55,7 @@
 }
 
 .faq-question {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: var(--on-surface);
   transition: color 0.3s ease;
@@ -56,6 +69,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .faq-plus {
@@ -93,10 +107,11 @@
 }
 
 .faq-answer {
-  padding-top: 1.5rem;
-  padding-left: 2.5rem;
+  padding-top: 1rem;
+  padding-left: 0;
   margin: 0;
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 @media (min-width: 768px) {
@@ -109,6 +124,8 @@
   }
   
   .faq-answer {
-    padding-left: 3.25rem;
+    padding-top: 1.5rem;
+    padding-left: 2.5rem;
+    font-size: 1rem;
   }
 }

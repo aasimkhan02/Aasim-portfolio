@@ -221,7 +221,7 @@ const ProjectDetail = () => {
       {/* Parallax Image Break */}
       <div
         className="detail-parallax-break"
-        style={{ backgroundImage: `url(${project.coverImage})` }}
+        style={{ backgroundImage: `url(${project.parallaxImage || project.coverImage})` }}
       />
 
       <section className="detail-project-overview">

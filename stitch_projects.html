@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aasim — Selected Works</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Space Grotesk & JetBrains Mono for brutalist editorial precision -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              orange: '#F14A16',
+              dark: '#111111',
+              muted: '#71717A',
+              border: '#E5E5E5',
+              borderDark: '#1E1E1E',
+              surface: '#FBFBFB'
+            }
+          },
+          letterSpacing: {
+            'tightest': '-0.06em',
+            'tighter': '-0.04em',
+            'widest-pill': '0.12em'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="editorial-typography">
+    body {
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #ffffff;
+      color: #111111;
+    }
+
+    /* Sharp editorial outline hover effect */
+    .project-card:hover .project-image {
+      transform: scale(1.018);
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-brand-orange selection:text-white flex flex-col justify-between">
+<!-- BEGIN: SiteNavigation -->
+<header class="w-full border-b border-neutral-100 sticky top-0 bg-white/90 backdrop-blur-md z-50">
+<nav aria-label="Main Navigation" class="max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 h-20 flex items-center justify-between">
+<!-- Brand Logo / Name with orange indicator -->
+<a aria-label="Aasim Portfolio Homepage" class="flex items-center gap-3.5 group cursor-pointer" href="#">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-orange inline-block transition-transform duration-300 group-hover:scale-125"></span>
+<span class="font-sans font-bold text-xl tracking-tight text-neutral-900 group-hover:text-black">Aasim</span>
+</a>
+<!-- Center Links: Monospaced uppercase navigation -->
+<div class="hidden md:flex items-center gap-10 lg:gap-14 font-mono text-[13px] font-medium tracking-widest text-neutral-700">
+<a class="transition-colors hover:text-black hover:underline underline-offset-8 decoration-1 decoration-neutral-300" href="#about">ABOUT</a>
+<a class="transition-colors hover:text-black hover:underline underline-offset-8 decoration-1 decoration-neutral-300" href="#skills">SKILLS</a>
+<a class="text-neutral-900 font-semibold underline underline-offset-8 decoration-1 decoration-black" href="#projects">PROJECTS</a>
+</div>
+<!-- Right Action: Resume -->
+<div class="flex items-center">
+<a class="font-mono text-sm font-semibold tracking-wider text-brand-orange hover:text-orange-700 flex items-center gap-1 transition-transform hover:translate-x-0.5" href="#resume">
+<span>RESUME</span>
+<span class="text-base leading-none">↗</span>
+</a>
+</div>
+</nav>
+</header>
+<!-- END: SiteNavigation -->
+<!-- BEGIN: MainContent -->
+<main class="w-full flex-grow" id="projects">
+<!-- Hero / Headline Section -->
+<section aria-labelledby="section-heading" class="max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 pt-16 sm:pt-24 lg:pt-28 pb-14">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+<!-- Massive Brutalist Title -->
+<div class="lg:col-span-8">
+<h1 class="font-sans font-extrabold text-[4.8rem] sm:text-[7.5rem] lg:text-[9.5rem] xl:text-[10.5rem] leading-[0.88] tracking-tightest text-neutral-950 uppercase select-none" id="section-heading">
+            SELECTED<br/>WORKS
+          </h1>
+</div>
+<!-- Archival Statement / Descriptor -->
+<div class="lg:col-span-4 lg:pb-3 max-w-lg">
+<p class="font-sans text-neutral-600 text-lg sm:text-xl lg:text-[1.3rem] leading-relaxed font-normal tracking-tight">
+            An archive of technical precision and aesthetic rigor. We build systems that bridge the gap between architectural form and digital infrastructure.
+          </p>
+</div>
+</div>
+<!-- Filter Controls: Minimalist tactile pill buttons with crisp borders -->
+<div aria-label="Project category filter" class="mt-16 sm:mt-24 flex flex-wrap items-center gap-3 font-mono text-[12px] sm:text-[13px] tracking-widest-pill" role="toolbar">
+<button class="bg-brand-dark text-white px-7 py-3 border border-brand-dark transition-all duration-200 hover:bg-neutral-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-black" type="button">
+          ALL
+        </button>
+<button class="bg-white text-neutral-900 px-7 py-3 border border-neutral-900 transition-all duration-200 hover:bg-neutral-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-black" type="button">
+          BACKEND
+        </button>
+<button class="bg-white text-neutral-900 px-7 py-3 border border-neutral-900 transition-all duration-200 hover:bg-neutral-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-black" type="button">
+          SOFTWARE
+        </button>
+<button class="bg-white text-neutral-900 px-7 py-3 border border-neutral-900 transition-all duration-200 hover:bg-neutral-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-black" type="button">
+          INFRASTRUCTURE
+        </button>
+</div>
+</section>
+<!-- BEGIN: ProjectsGridSection -->
+<section aria-label="Projects Showcase" class="max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 pb-28 sm:pb-36">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-14 gap-y-16 sm:gap-y-24">
+<!-- Project 1: VALVO -->
+<article class="project-card group flex flex-col cursor-pointer" data-purpose="project-item">
+<div class="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden border border-neutral-200">
+<img alt="Sleek futuristic 3D dark glass and neon amber rate limiting flow diagram, architectural technical telemetry dashboard mockup" class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8ghj-KJwhrMlERzg5qwqvx2SjVtbEhIX3blYCp8cocHI_4lxbj0wEL-wmKrZWxXb3lm9xdTkb7qsiNpiJRyJYOV0ikWb8ksrOborJk2WenCxsPdpD1jhrHaEUJTbV7QY152klLG1pSkaFaV492syMdOTifkp8O6RjHz3ytqi6rwEJ06E89ClmIZgIpjc1Xarr_Aoo9qs_9-XGWW9eewK2JXWZyPiGVhmt_8sFYjUhjOuyV495XQKH"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-neutral-200 font-mono text-[11px] px-2.5 py-1 tracking-wider uppercase border border-white/10">
+              INFRA / 2024
+            </div>
+</div>
+<div class="mt-4 sm:mt-5 flex items-baseline justify-between border-b border-neutral-200 pb-3">
+<h2 class="font-sans text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 group-hover:text-brand-orange transition-colors">
+              VALVO <span class="font-normal text-neutral-800 text-lg sm:text-xl">— Distributed rate limiting system.</span>
+</h2>
+<span class="font-mono text-xs text-neutral-400 group-hover:text-black transition-colors pl-2">01</span>
+</div>
+</article>
+<!-- Project 2: MODELHQ -->
+<article class="project-card group flex flex-col cursor-pointer" data-purpose="project-item">
+<div class="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden border border-neutral-200">
+<img alt="Modern AI predictive modeling studio interface on sleek floating clay MacBook mockup" class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlolORXmJmQ_7Mbwa-K1gjyqkPLJ5fv5HXK4XVNC2wQ9_1ERX1IL5MxCUwCeqM1k8x6vDH0E9nNoWASCWP_PDnu6gRGBC0dvSwAYB0oSAxzwY-5Zeen-uFEgksA9RyRLjY2la9dJMRwxjdS90SP2QKLzR3_JC5YYg62_57_pWOj2iJuMWVfpzAfZz7Bjdvjxvjq-N0f72srKcALQ10cSRQ4NX0tExRiXqjzaem7w1DB6VmszYp_Llt"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-neutral-200 font-mono text-[11px] px-2.5 py-1 tracking-wider uppercase border border-white/10">
+              SOFTWARE / 2024
+            </div>
+</div>
+<div class="mt-4 sm:mt-5 flex items-baseline justify-between border-b border-neutral-200 pb-3">
+<h2 class="font-sans text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 group-hover:text-brand-orange transition-colors">
+              MODELHQ <span class="font-normal text-neutral-800 text-lg sm:text-xl">— AI model discovery platform.</span>
+</h2>
+<span class="font-mono text-xs text-neutral-400 group-hover:text-black transition-colors pl-2">02</span>
+</div>
+</article>
+<!-- Project 3: EVUA -->
+<article class="project-card group flex flex-col cursor-pointer" data-purpose="project-item">
+<div class="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden border border-neutral-200">
+<img alt="Modern developer tool interface for legacy code migration and AST refactoring split screen diff view" class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlI3v1af8laPNNx7QEQs9R57kldt2-4891Oie1bqQSebalwu7Lwl7TCzb5be060GZD4ooDpm7PF6lq88oWo5IvTpWgK_AMCJ4r15JuSnzZKM5QS6UBOFoQCAlAuWKRhzwJ5gUrnX8FyShUyIQk_ipbjRWKKhn6AE3ZaBshiOWera-3tr6iWp_lWYhQvJmnjux8_B7oT8C9iGtxLd-X4_QpK9O1GF3aAjtucoKW70M2grv-8txX43Fk"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-neutral-200 font-mono text-[11px] px-2.5 py-1 tracking-wider uppercase border border-white/10">
+              BACKEND / 2023
+            </div>
+</div>
+<div class="mt-4 sm:mt-5 flex items-baseline justify-between border-b border-neutral-200 pb-3">
+<h2 class="font-sans text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 group-hover:text-brand-orange transition-colors">
+              EVUA <span class="font-normal text-neutral-800 text-lg sm:text-xl">— Legacy code modernization platform.</span>
+</h2>
+<span class="font-mono text-xs text-neutral-400 group-hover:text-black transition-colors pl-2">03</span>
+</div>
+</article>
+<!-- Project 4: HEALTHWAVE -->
+<article class="project-card group flex flex-col cursor-pointer" data-purpose="project-item">
+<div class="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden border border-neutral-200">
+<img alt="Futuristic medical intelligence and healthcare diagnostic dashboard on a floating frameless glass display" class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-kdSFF73PG-ROyfblz-D0FKXvj1zMQaAbn5G0JkQR1Kkcp-EPzBvNnqGfG8QkHIgrZ5ZBSeh3igXDplqruqrnGVDwAiRZLUqGnh4_Vk84v42GexaNCGQu_z-WAdLKUM38XjXM58wL-g3MN3LxyGNxP0fLeuq1kj9WdFFL-ZR_7Sk3arrdCrxmxdXQbb3IS6H9ejrtkM8SybkrSl6ev4sFNqGsOlbMWwCRsTyVGcPinqfsUjugImf4"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-neutral-200 font-mono text-[11px] px-2.5 py-1 tracking-wider uppercase border border-white/10">
+              SOFTWARE / 2023
+            </div>
+</div>
+<div class="mt-4 sm:mt-5 flex items-baseline justify-between border-b border-neutral-200 pb-3">
+<h2 class="font-sans text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 group-hover:text-brand-orange transition-colors">
+              HEALTHWAVE <span class="font-normal text-neutral-800 text-lg sm:text-xl">— Healthcare information platform.</span>
+</h2>
+<span class="font-mono text-xs text-neutral-400 group-hover:text-black transition-colors pl-2">04</span>
+</div>
+</article>
+<!-- Project 5: PHYTOCLASS -->
+<article class="project-card group flex flex-col cursor-pointer" data-purpose="project-item">
+<div class="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden border border-neutral-200">
+<img alt="Bioluminescent phytoplankton marine organism glowing under microscopic ocean water" class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLrIbWnoCVQwV5MIf28Ye1W_pmXMJb6MbtKFl5Zb4Ve2OgjvX6p-I9KAuLn7w9DXhTzOr2BqsvjwEyinw4zQNbxWt_kMK_-TvKo8OHnHqxByy7FTeKMES2Yaga5MVHERWkRaqR9NzyhjH-VI927Td7-UuGySy53HZs0oU0VkauHNtRsRyzzsO1qLPQzZ3wmMNeV3AVNGR2MvjeTKW87BdoThOjZQO41hB4neBmcSnQz6CgeXJbk_m"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-neutral-200 font-mono text-[11px] px-2.5 py-1 tracking-wider uppercase border border-white/10">
+              BACKEND / 2023
+            </div>
+</div>
+<div class="mt-4 sm:mt-5 flex items-baseline justify-between border-b border-neutral-200 pb-3">
+<h2 class="font-sans text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 group-hover:text-brand-orange transition-colors">
+              PHYTOCLASS <span class="font-normal text-neutral-800 text-lg sm:text-xl">— Open-source phytoplankton platform.</span>
+</h2>
+<span class="font-mono text-xs text-neutral-400 group-hover:text-black transition-colors pl-2">05</span>
+</div>
+</article>
+<!-- Project 6: THREATBOX -->
+<article class="project-card group flex flex-col cursor-pointer" data-purpose="project-item">
+<div class="relative w-full aspect-[16/9] bg-neutral-100 overflow-hidden border border-neutral-200">
+<img alt="Cybersecurity malware sandbox analysis workspace, interactive terminal matrix with dynamic threat vulnerability graph" class="project-image w-full h-full object-cover transition-transform duration-700 ease-out" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBViL9-hDWnqQV6PlxbZi0DAmrovU0hvcFtZHMgWB-rTMasnqPx9dbXe1ImvUU8wp2BorVPq13KE5hSenlt6f2Bed3kCuJWNspdxAqWZpjsfx7Ru44C_h-UH2klNstnZcrlA6WnM0ygSOpcudjCrENpFqsWaQn8cEXz9gddPF3OLvM0dmKPZu_HJ93DE58CjY2NYfx3KvU1kG6K3eZL0bhaEZMPC74HDtpxC5p_Ml2gK01Ukr4sXd4S"/>
+<div class="absolute top-4 right-4 bg-black/80 backdrop-blur-sm text-neutral-200 font-mono text-[11px] px-2.5 py-1 tracking-wider uppercase border border-white/10">
+              INFRA / 2022
+            </div>
+</div>
+<div class="mt-4 sm:mt-5 flex items-baseline justify-between border-b border-neutral-200 pb-3">
+<h2 class="font-sans text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 group-hover:text-brand-orange transition-colors">
+              THREATBOX <span class="font-normal text-neutral-800 text-lg sm:text-xl">— Malware analysis sandbox.</span>
+</h2>
+<span class="font-mono text-xs text-neutral-400 group-hover:text-black transition-colors pl-2">06</span>
+</div>
+</article>
+</div>
+</section>
+<!-- END: ProjectsGridSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: MainFooter -->
+<footer class="w-full border-t border-neutral-200 py-10 bg-white" data-purpose="footer-summary">
+<div class="max-w-[1720px] mx-auto px-6 sm:px-12 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+<span class="font-mono text-xs text-neutral-500 uppercase tracking-widest">© 2024 Aasim — Systems &amp; Infrastructure</span>
+</div>
+<div class="flex items-center gap-8 font-mono text-xs tracking-wider text-neutral-600">
+<a class="hover:text-black transition-colors" href="#projects">BACK TO TOP ↑</a>
+<a class="hover:text-black transition-colors" href="#contact">CONTACT</a>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

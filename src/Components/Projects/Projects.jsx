@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
-import PhytoclassImg from '../../assets/ocean.webp';
-import ConstructionImg from '../../assets/construction.webp';
+import PhytoclassImg from '../../assets/Phytoclass.png';
+import EVUAImg from '../../assets/EVUA.png';
+import ThreatboxImg from '../../assets/Threatbox.png';
 
 const featuredProjects = [
   {
-    id: 'phytoclass',
-    title: 'Phytoclass',
-    subtitle: 'Google Summer of Code 2025',
-    description: 'PhytoClass is an open-source platform for phytoplankton classification and flow cytometry analysis, designed to help researchers process, validate, and interpret scientific data through an interactive R/Shiny interface. As part of Google Summer of Code, I contributed by improving the analysis workflow, implementing session-based file isolation, adding report export capabilities, strengthening validation checks, and integrating automated testing to enhance reliability and multi-user support.',
-    categories: ['R', 'Shiny', 'GitHub Actions', 'testthat'],
-    coverImage: PhytoclassImg,
+    id: 'threatbox',
+    title: 'THREATBOX',
+    subtitle: 'MALWARE ANALYSIS',
+    description: 'ThreatBox is a malware analysis platform designed to process suspicious files through a structured analysis pipeline. It uses a Go backend with PostgreSQL to manage samples, analysis jobs, workers, events, and results. The system separates job scheduling from processing and is designed to collect system-level activity during malware execution for behavioral analysis.',
+    categories: ['Go', 'PostgreSQL', 'Docker', 'REST API'],
+    coverImage: ThreatboxImg,
+    containImage: true,
+    backgroundColor: '#0F172A' // Change this color for Threatbox
   },
   {
     id: 'evua',
@@ -19,7 +22,9 @@ const featuredProjects = [
     subtitle: 'ACADEMIC PROJECT',
     description: 'EVUA is a legacy code modernization platform that automates large-scale code migrations using AST-based transformations with LLM-assisted fallbacks. It analyzes existing codebases, applies repository-wide refactoring, validates the generated changes, and streamlines the migration process through an intuitive web interface, making legacy software upgrades more reliable and maintainable.',
     categories: ['Python', 'FastAPI', 'React', 'SQLite'],
-    coverImage: ConstructionImg,
+    coverImage: EVUAImg,
+    containImage: true,
+    backgroundColor: '#1E1B4B' // Change this color for EVUA
   }
 ];
 
@@ -36,7 +41,8 @@ const Projects = () => {
                 <img
                   src={project.coverImage}
                   alt={project.title}
-                  className="project-image"
+                  className={`project-image ${project.containImage ? 'project-image-contain' : ''}`}
+                  style={project.containImage && project.backgroundColor ? { backgroundColor: project.backgroundColor } : {}}
                   loading="lazy"
                   decoding="async"
                 />

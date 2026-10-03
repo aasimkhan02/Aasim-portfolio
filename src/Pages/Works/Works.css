@@ -14,7 +14,7 @@
 }
 
 .works-hero-title {
-  font-size: 8rem;
+  font-size: clamp(2.5rem, 9vw, 8rem);
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.04em;
@@ -24,34 +24,60 @@
 
 .works-hero-desc {
   max-width: 400px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--secondary);
 }
 
+@media (min-width: 768px) {
+  .works-hero-desc {
+    font-size: 1.125rem;
+  }
+}
+
 /* Category Filters */
 .works-categories {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .works-categories {
+    padding: 4rem 0;
+  }
 }
 
 .categories-wrapper {
-  padding-left: 3rem;
+  padding-left: 0;
   display: flex;
-  justify-content: left;
-  gap: 1rem;
+  justify-content: flex-start;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
+@media (min-width: 768px) {
+  .categories-wrapper {
+    padding-left: 3rem;
+    gap: 1rem;
+  }
+}
+
 .category-btn {
-  padding: 0.75rem 2rem;
+  padding: 0.5rem 1.25rem;
   border: 1px solid var(--on-surface);
   background: transparent;
   color: var(--on-surface);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .category-btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.875rem;
+  }
 }
 
 .category-btn.active,
@@ -70,7 +96,7 @@
   grid-template-columns: 1fr;
   gap: 2rem;
   border-top: 1px solid var(--border-color);
-  padding: 3rem 1.5rem;
+  padding: 2.5rem 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -101,37 +127,38 @@
   transition: transform 0.6s ease;
 }
 
+.ref-image-contain {
+  object-fit: contain;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .ref-image-contain {
+    padding: 2rem;
+  }
+}
+
 .works-ref-card:hover .ref-image {
   transform: scale(1.03);
 }
 
 .ref-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.4;
   color: var(--on-surface);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .works-hero-title {
-    font-size: 5rem;
+@media (min-width: 768px) {
+  .ref-title {
+    font-size: 1.5rem;
   }
-
-  /* Grid layout replaces old item layout, no overrides needed for old layout */
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .works-hero-title {
-    font-size: 4rem;
-  }
-
   .works-hero-container {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .categories-wrapper {
-    justify-content: flex-start;
   }
 }

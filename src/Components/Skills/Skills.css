@@ -2,27 +2,26 @@
 .skills-list {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2.5rem;
 }
 
 .skill-item {
   cursor: default;
 }
 
-
-
 .skill-headline {
-  font-size: 3rem;
+  font-size: clamp(1.6rem, 6.5vw, 3rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.05em;
   display: inline-block;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .skill-underline {
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 0.75rem;
 }
 
 .skill-underline::after {
@@ -45,7 +44,7 @@
 }
 
 .body-lg {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
   line-height: 1.6;
   max-width: 42rem;
 }
@@ -53,7 +52,7 @@
 .skill-content-container {
   position: relative;
   overflow: hidden;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   min-height: 4.5rem;
   display: flex;
   align-items: center;
@@ -118,7 +117,7 @@
 .marquee-tech-item {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   color: var(--white);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -134,7 +133,9 @@
 }
 
 @media (min-width: 768px) {
+  .skills-list { gap: 4rem; }
   .skill-headline { font-size: 4.5rem; }
+  .skill-content-container { margin-top: 2rem; }
 }
 
 @media (min-width: 1024px) {
@@ -143,6 +144,6 @@
 
 .skills-label {
   color: var(--brand-orange);
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   letter-spacing: 0.1em;
 }

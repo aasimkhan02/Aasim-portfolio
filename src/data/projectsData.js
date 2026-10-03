@@ -1,10 +1,21 @@
-import HealthWaveImg from '../assets/healthwave1.webp'
-import PhytoclassImg from '../assets/ocean.webp';
+import HealthWaveImg from '../assets/healthwave.png'
+import PhytoclassImg from '../assets/Phytoclass.png';
 import ConstructionImg from '../assets/construction.webp';
-import ValvoImg from '../assets/ratelimiter.webp'
-import ThreatboxImg from '../assets/threatbox.webp'
-import ModelHQImg from '../assets/Modelhq.webp'
-import QuizEliteImg from '../assets/laptop.webp'
+import ValvoImg from '../assets/valvo.png'
+import ThreatboxImg from '../assets/Threatbox.png'
+import EVUAImg from '../assets/EVUA.png'
+import ModelHQImg from '../assets/modelhq.png'
+import OceanImg from './../assets/ocean.jpg'
+import Phytoclass1 from './../assets/Phytoclass1.png'
+import Phytoclass2 from './../assets/Phytoclass2.png'
+import Phytoclass3 from './../assets/Phytoclass3.png'
+import Threatbox1 from './../assets/Threatbox1.jpg'
+import Healthcare from './../assets/healthcare.jpg'
+import Healthwave1 from './../assets/healthwave1.jpg'
+import Valvo1 from './../assets/valvo1.jpg'
+import Modelhq1 from './../assets/modelhq1.png'
+import modelhq2 from './../assets/modelhq2.jpg'
+
 
 
 
@@ -18,6 +29,9 @@ export const projectsData = [
   categories: ['R', 'Shiny', 'GitHub Actions', 'testthat', 'Git'],
   summary: 'Open-source phytoplankton classification platform',
   coverImage: PhytoclassImg,
+  parallaxImage: OceanImg, 
+  containImage: true,
+  backgroundColor: '#F5F3EA',
 
   about:
     'PhytoClass is an open-source R/Shiny application that helps researchers classify and analyze phytoplankton using flow cytometry data. During Google Summer of Code, I contributed to improving the application by implementing session-based file isolation, report export functionality, validation workflows, and automated testing to make the platform more reliable and easier to use for multiple users.',
@@ -47,7 +61,9 @@ export const projectsData = [
   ],
 
   imageGallery: [
-    PhytoclassImg
+    Phytoclass1,
+    Phytoclass2,
+    Phytoclass3
   ],
 
   features: [
@@ -112,6 +128,9 @@ export const projectsData = [
     'A malware analysis platform built around reliable job processing, sample management, behavioral monitoring, and structured analysis results.',
 
   coverImage: ThreatboxImg,
+  parallaxImage: Threatbox1, 
+  containImage: true,
+  backgroundColor: '#5B6573', 
 
   about:
     'ThreatBox is a malware analysis platform designed to process suspicious files through a structured analysis pipeline. It uses a Go backend with PostgreSQL to manage samples, analysis jobs, workers, events, and results. The system separates job scheduling from processing and is designed to collect system-level activity during malware execution for behavioral analysis.',
@@ -196,7 +215,10 @@ export const projectsData = [
   summary:
     'A platform that modernizes legacy codebases through AST-based transformations and AI-assisted refactoring.',
 
-  coverImage: ConstructionImg,
+  coverImage: EVUAImg,
+  parallaxImage: ConstructionImg, 
+  containImage: true,
+  backgroundColor: '#718B9B',
 
   about:
     'EVUA is a legacy code modernization platform designed to automate the migration of outdated software. It combines deterministic AST-based transformations with LLM-assisted fallbacks to refactor unsupported code patterns, validate generated changes, and streamline repository-wide modernization through a unified workflow.',
@@ -221,7 +243,7 @@ export const projectsData = [
   ],
 
   imageGallery: [
-    ConstructionImg
+    EVUAImg
   ],
 
   architecture:
@@ -277,12 +299,14 @@ export const projectsData = [
     'A healthcare platform providing medication information, disease prediction, and educational resources.',
 
   coverImage: HealthWaveImg,
+  parallaxImage: Healthcare, 
 
   about:
     'HealthWave is a full-stack healthcare platform that helps users access medical information in one place. It combines medication details, disease prediction models, and educational content through a simple web interface, making healthcare resources easier to explore and understand.',
 
   imageGallery: [
-    HealthWaveImg
+    Healthwave1,
+    HealthWaveImg,
   ],
 
   features: [
@@ -350,12 +374,15 @@ export const projectsData = [
     'A distributed rate limiting system built for low-latency admission control and scalable API traffic management.',
 
   coverImage: ValvoImg,
+  parallaxImage: Valvo1, // REPLACE THIS with your specific parallax image
+  containImage: true,
+  backgroundColor: '#155EEF',
 
   about:
     'Valvo (P.A.R.L-AI) is a distributed rate limiting system designed to enforce multi-dimensional quotas with microsecond-level decision latency. It combines deterministic admission control with an AI-powered control plane, enabling fast local decisions while maintaining bounded global correctness across distributed environments. The system supports repository-scale deployments through Redis-backed coordination, atomic Lua operations, and pluggable rate limiting strategies.' ,
 
   imageGallery: [
-    ValvoImg
+    
   ],
 
   features: [
@@ -432,12 +459,14 @@ export const projectsData = [
     'A platform that brings together machine learning models from multiple domains with interactive predictions, research references, and implementation guides.',
 
   coverImage: ModelHQImg,
+  parallaxImage: modelhq2, // REPLACE THIS with your specific parallax image
 
   about:
     'ModelHQ is a full-stack platform that makes machine learning models accessible through a unified web interface. Users can run predictions, explore research-backed implementations, download source code, and understand each model through line-by-line code explanations. Designed as both an educational resource and a practical demonstration of applied machine learning, the platform spans domains including healthcare, finance, business, and real estate.',
 
   imageGallery: [
-    ModelHQImg
+    Modelhq1,
+    ModelHQImg // REPLACE THIS with your specific showcase image(s)
   ],
 
   features: [
@@ -486,83 +515,83 @@ export const projectsData = [
 
   githubLink: 'https://github.com/aasimkhan02/modelhq',
 
-  },
-  {
-    id: 'quizelite',
-    type: 'SOFTWARE',
-
-  title: 'QUIZELITE — Online quiz platform.',
-
-  tagline:
-    'A full-stack platform for creating, hosting, and participating in interactive quizzes.',
-
-  categories: [
-    'Django',
-    'Python',
-    'JavaScript',
-    'SQLite'
-  ],
-
-  techStack:
-    'Django, Python, HTML, CSS, JavaScript, SQLite',
-
-  summary:
-    'A web application that allows users to create, host, and participate in interactive quizzes across multiple subjects.',
-
-  coverImage: QuizEliteImg,
-
-  about:
-    'QuizElite is a full-stack quiz platform designed for learning and assessment. It offers a collection of ready-to-play quizzes while allowing registered users to create, host, and share their own quizzes. The platform includes authentication, score tracking, and quiz sharing through unique access codes, making it suitable for classrooms, study groups, and self-paced learning.',
-
-  imageGallery: [
-    QuizEliteImg
-  ],
-
-  features: [
-    {
-      title: 'Ready-to-Play Quizzes',
-      desc: 'Explore 20+ quizzes across science, history, technology, and general knowledge.'
-    },
-    {
-      title: 'Quiz Creation',
-      desc: 'Create custom quizzes with your own questions and answers.'
-    },
-    {
-      title: 'Quiz Sharing',
-      desc: 'Invite others using unique quiz codes for collaborative learning.'
-    },
-    {
-      title: 'User Authentication',
-      desc: 'Register, log in, and manage quizzes through secure user accounts.'
-    },
-    {
-      title: 'Instant Scoring',
-      desc: 'Receive immediate feedback and final scores after completing a quiz.'
-    }
-  ],
-
-  challenges: [
-    {
-      problem:
-        'Supporting both predefined and user-generated quizzes within a single platform.',
-      solution:
-        'Designed reusable Django models and views to manage quizzes, questions, and user submissions.'
-    },
-    {
-      problem:
-        'Providing a simple way to share quizzes.',
-      solution:
-        'Implemented unique access codes that allow users to join custom quizzes without exposing internal identifiers.'
-    },
-    {
-      problem:
-        'Managing authentication and user-owned content.',
-      solution:
-        'Integrated Django authentication to secure accounts and restrict quiz management to their respective creators.'
-    }
-  ],
-
-  githubLink: 'https://github.com/aasimkhan02/quizelite',
-
   }
+//   {
+//     id: 'quizelite',
+//     type: 'SOFTWARE',
+
+//   title: 'QUIZELITE — Online quiz platform.',
+
+//   tagline:
+//     'A full-stack platform for creating, hosting, and participating in interactive quizzes.',
+
+//   categories: [
+//     'Django',
+//     'Python',
+//     'JavaScript',
+//     'SQLite'
+//   ],
+
+//   techStack:
+//     'Django, Python, HTML, CSS, JavaScript, SQLite',
+
+//   summary:
+//     'A web application that allows users to create, host, and participate in interactive quizzes across multiple subjects.',
+
+//   coverImage: QuizEliteImg,
+
+//   about:
+//     'QuizElite is a full-stack quiz platform designed for learning and assessment. It offers a collection of ready-to-play quizzes while allowing registered users to create, host, and share their own quizzes. The platform includes authentication, score tracking, and quiz sharing through unique access codes, making it suitable for classrooms, study groups, and self-paced learning.',
+
+//   imageGallery: [
+//     QuizEliteImg
+//   ],
+
+//   features: [
+//     {
+//       title: 'Ready-to-Play Quizzes',
+//       desc: 'Explore 20+ quizzes across science, history, technology, and general knowledge.'
+//     },
+//     {
+//       title: 'Quiz Creation',
+//       desc: 'Create custom quizzes with your own questions and answers.'
+//     },
+//     {
+//       title: 'Quiz Sharing',
+//       desc: 'Invite others using unique quiz codes for collaborative learning.'
+//     },
+//     {
+//       title: 'User Authentication',
+//       desc: 'Register, log in, and manage quizzes through secure user accounts.'
+//     },
+//     {
+//       title: 'Instant Scoring',
+//       desc: 'Receive immediate feedback and final scores after completing a quiz.'
+//     }
+//   ],
+
+//   challenges: [
+//     {
+//       problem:
+//         'Supporting both predefined and user-generated quizzes within a single platform.',
+//       solution:
+//         'Designed reusable Django models and views to manage quizzes, questions, and user submissions.'
+//     },
+//     {
+//       problem:
+//         'Providing a simple way to share quizzes.',
+//       solution:
+//         'Implemented unique access codes that allow users to join custom quizzes without exposing internal identifiers.'
+//     },
+//     {
+//       problem:
+//         'Managing authentication and user-owned content.',
+//       solution:
+//         'Integrated Django authentication to secure accounts and restrict quiz management to their respective creators.'
+//     }
+//   ],
+
+//   githubLink: 'https://github.com/aasimkhan02/quizelite',
+
+//   }
 ];

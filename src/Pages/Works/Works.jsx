@@ -57,7 +57,14 @@ const Works = () => {
               {row.map((project) => (
                 <Link to={`/project/${project.id}`} key={project.id} className="works-ref-card" data-aos="fade-up">
                   <div className="ref-image-wrapper">
-                    <img src={project.coverImage} alt={project.title} className="ref-image" loading="lazy" decoding="async" />
+                    <img 
+                      src={project.coverImage} 
+                      alt={project.title} 
+                      className={`ref-image ${project.containImage ? 'ref-image-contain' : ''}`} 
+                      style={project.containImage && project.backgroundColor ? { backgroundColor: project.backgroundColor } : {}}
+                      loading="lazy" 
+                      decoding="async" 
+                    />
                   </div>
                   <h3 className="ref-title">{project.title}</h3>
                 </Link>

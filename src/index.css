@@ -100,7 +100,7 @@ button {
 
 /* New Sections Styling */
 .section-padding {
-  padding: 8rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 
 .bg-surface-container-low { background-color: var(--surface-container-low); }
@@ -111,7 +111,7 @@ button {
 .text-secondary { color: var(--secondary); }
 
 @media (min-width: 768px) {
-  .section-padding { padding: 8rem 4rem; }
+  .section-padding { padding: 6rem 4rem; }
 }
 
 @media (min-width: 1024px) {

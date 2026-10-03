@@ -38,7 +38,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="flex flex-wrap mt-16 gap-12">
+          <div className="flex flex-wrap mt-8 gap-6">
             <div>
               <p className="meta-label mb-2">Location</p>
               <p className="meta-value">Mumbai, India</p>
