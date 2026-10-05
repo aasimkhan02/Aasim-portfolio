@@ -41,6 +41,34 @@
   line-height: 1.5;
 }
 
+.contact-link {
+  color: var(--white);
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--brand-orange);
+}
+
+.form-success-msg {
+  padding: 2.5rem;
+  border: 1px solid var(--brand-orange);
+  background-color: rgba(255, 77, 0, 0.05);
+  color: var(--white);
+}
+
+.form-success-msg h3 {
+  font-size: 1.5rem;
+  color: var(--brand-orange);
+  margin-bottom: 0.75rem;
+}
+
+.form-success-msg p {
+  color: var(--white);
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
 .contact-form-container {
   width: 100%;
 }
@@ -121,6 +149,39 @@
 
 .submit-btn:hover {
   background-color: var(--brand-orange);
+  color: var(--white);
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reset-btn {
+  margin-top: 1.5rem;
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: var(--white);
+  color: #111111;
+}
+
+.form-error-msg {
+  padding: 1rem;
+  border: 1px solid #ff4444;
+  background-color: rgba(255, 68, 68, 0.1);
+  color: #ff6666;
+  font-size: 0.875rem;
 }
 
 @media (min-width: 768px) {

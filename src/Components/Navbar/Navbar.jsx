@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Magnetic from '../Common/Magnetic';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -22,37 +23,53 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="container flex items-center justify-between">
           {/* Logo */}
-          <div className="nav-brand">
-            <div className="brand-dot"></div>
-            <Link to="/">Aasim</Link>
-          </div>
+          <Magnetic strength={0.25}>
+            <div className="nav-brand">
+              <div className="brand-dot"></div>
+              <Link to="/">Aasim</Link>
+            </div>
+          </Magnetic>
 
           {/* Desktop Links */}
           <ul className="desktop-nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li>
+              <Magnetic strength={0.35}>
+                <a href="#about">About</a>
+              </Magnetic>
+            </li>
+            <li>
+              <Magnetic strength={0.35}>
+                <a href="#skills">Skills</a>
+              </Magnetic>
+            </li>
+            <li>
+              <Magnetic strength={0.35}>
+                <a href="#projects">Projects</a>
+              </Magnetic>
+            </li>
           </ul>
 
           {/* Mobile & Actions Section */}
           <div className="flex items-center gap-6">
             {/* Resume Link */}
-            <a href="/resume.pdf" download="Resume.pdf" className="resume-btn group">
-              <span>Resume</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="16" height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2.5" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              >
-                <path d="M7 17L17 7"></path>
-                <path d="M7 7h10v10"></path>
-              </svg>
-            </a>
+            <Magnetic strength={0.3}>
+              <a href="/resume.pdf" download="Resume.pdf" className="resume-btn group">
+                <span>Resume</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="16" height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2.5" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </a>
+            </Magnetic>
 
             {/* Mobile Toggle */}
             <button 

@@ -1,48 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import Magnetic from '../Common/Magnetic';
 import './Hero.css';
 
 const Hero = () => {
-  const circleRef = useRef(null);
-
-  useEffect(() => {
-    const circle = circleRef.current;
-    
-    // Only apply the effect on desktop (min-width: 768px)
-    if (circle && window.innerWidth > 768) {
-      const handleMouseMove = (e) => {
-        const rect = circle.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        circle.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
-      };
-
-      const handleMouseLeave = () => {
-        circle.style.transform = `translate(0, 0) scale(1)`;
-      };
-
-      circle.addEventListener('mousemove', handleMouseMove);
-      circle.addEventListener('mouseleave', handleMouseLeave);
-
-      return () => {
-        circle.removeEventListener('mousemove', handleMouseMove);
-        circle.removeEventListener('mouseleave', handleMouseLeave);
-      };
-    }
-  }, []);
-
   return (
     <main className="hero">
       {/* Top/Middle Grid Section */}
       <section className="container hero-grid">
-        {/* About Me Circle Button */}
+        {/* Scroll To Explore Circle Indicator */}
         <div className="about-circle-wrapper">
-          <a 
-            href="#about" 
-            className="about-circle"
-            ref={circleRef}
-          >
-            About me
-          </a>
+          <Magnetic strength={0.25} scale={1.02}>
+            <div className="about-circle">
+              <div className="about-circle-content">
+                <span>SCROLL TO</span>
+                <span>EXPLORE</span>
+                <svg 
+                  className="scroll-arrow" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="1.25" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 1v22M17 18l-5 5-5-5" />
+                </svg>
+              </div>
+            </div>
+          </Magnetic>
         </div>
 
         {/* Professional Title */}

@@ -34,7 +34,7 @@ const Works = () => {
             </h1>
             <div className="works-hero-desc">
               <p>
-                An archive of technical precision and aesthetic rigor. We build systems that bridge the gap between architectural form and digital infrastructure.
+                A selection of systems, products, and experiences I’ve built across engineering and design, combining technical thinking with thoughtful interfaces.
               </p>
             </div>
           </div>
@@ -72,7 +72,10 @@ const Works = () => {
             </div>
           ))}
         </section>
+
+        <Contact />
       </main>
+      <SocialSidebar />
     </>
   );
 };
