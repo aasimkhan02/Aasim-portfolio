@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             {/* Resume Link */}
             <Magnetic strength={0.3}>
-              <a href="/resume.pdf" download="Resume.pdf" className="resume-btn group">
+              <a href="/Aasim_Khan_Resume.pdf" download="Aasim_Khan_Resume.pdf" className="resume-btn group">
                 <span>Resume</span>
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -110,6 +110,7 @@ const Navbar = () => {
           <li><a href="#about" onClick={toggleMenu}>About</a></li>
           <li><a href="#skills" onClick={toggleMenu}>Skills</a></li>
           <li><a href="#projects" onClick={toggleMenu}>Projects</a></li>
+          <li><a href="/Aasim_Khan_Resume.pdf" download="Aasim_Khan_Resume.pdf" onClick={toggleMenu}>Resume ↗</a></li>
         </ul>
 
         <div className="mobile-socials">
